@@ -1,0 +1,74 @@
+# LeakFree-Heart configuration. Every experiment reads this file.
+project:
+  seed: 42
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  results: results
+  models: models
+  knowledge_base: knowledge_base
+
+data:
+  # auto           -> use UCI multi-site files if downloaded, else fall back to the Kaggle copy of Cleveland
+  # uci            -> require data/raw/uci/processed.*.data   (python scripts/download_data.py)
+  # kaggle_cleveland -> Cleveland only, rebuilt from the Kaggle CSV (recoded to UCI conventions)
+  source: auto
+  primary_site: cleveland
+  external_sites: [hungarian, switzerland, va]
+  deduplicate: true
+
+cv:
+  n_splits: 10
+  n_repeats: 5
+  n_bootstrap: 2000
+  n_jobs: 2
+
+models:
+  benchmark: [logreg, svm, rf, xgb, dense_paper, conv1d]   # add "tabnet" if pytorch-tabnet is installed
+  primary: auto            # auto = best mean AUC in the benchmark, or force a name (e.g. logreg)
+
+torch:
+  device: auto             # auto | cpu | cuda
+  epochs: 300
+  patience: 40
+  lr: 0.001
+  batch_size: 32
+  weight_decay: 0.0001
+  val_fraction: 0.15
+  paper_epochs: 2000       # used only for the base-paper replication
+  paper_batch_size: 64
+
+uncertainty:
+  alphas: [0.05, 0.10, 0.15, 0.20, 0.30]
+  calib_fraction: 0.25
+  mondrian: true           # class-conditional conformal => per-class coverage guarantee
+  target_accuracy: 0.95
+
+explain:
+  k_top: 5
+  shap_background: 50
+  n_patients: 60           # patients used for explanation-quality experiments
+  stability_runs: 5
+
+rag:
+  embedding_model: BAAI/bge-small-en-v1.5
+  backend: auto            # auto = dense if sentence-transformers+model available, else tfidf
+  top_k: 4
+  per_feature_k: 2
+  chunk_words: 140
+  chunk_overlap: 30
+
+llm:
+  backend: auto            # auto = ollama if reachable, else mock | ollama | mock | openai
+  model: llama3.2:3b
+  host: http://localhost:11434
+  temperature: 0.2
+  max_repairs: 2
+  openai_base_url: ""      # optional OpenAI-compatible endpoint
+  openai_model: ""
+
+faithfulness:
+  k_top: 5
+  support_threshold: 0.12
+  n_patients: 40

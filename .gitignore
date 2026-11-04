@@ -1,0 +1,10 @@
+venv/
+node_modules/
+frontend/dist/
+__pycache__/
+.pytest_cache/
+models/artifact.joblib
+data/raw/
+results/cache/
+knowledge_base/index/
+knowledge_base/raw/

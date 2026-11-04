@@ -1,0 +1,12 @@
+{
+  "top8_features_full_data_for_display": [
+    "cp",
+    "thal",
+    "ca",
+    "thalach",
+    "oldpeak",
+    "age",
+    "exang",
+    "chol"
+  ]
+}
