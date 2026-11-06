@@ -1,0 +1,13 @@
+condition,variant,brier,ece
+tab_logreg,raw,0.2029,0.0525
+tab_logreg,temperature-scaled,0.2035,0.0544
+feat_xgb,raw,0.1432,0.0278
+feat_xgb,temperature-scaled,0.1433,0.0294
+feat_xgb_tab,raw,0.137,0.0252
+feat_xgb_tab,temperature-scaled,0.1372,0.0273
+ecg_cnn,raw,0.0906,0.0355
+ecg_cnn,temperature-scaled,0.0888,0.0111
+fusion_e2e,raw,0.0885,0.0319
+fusion_e2e,temperature-scaled,0.0871,0.0168
+fusion_stack,raw,0.0849,0.0103
+fusion_stack,temperature-scaled,0.0849,0.0101

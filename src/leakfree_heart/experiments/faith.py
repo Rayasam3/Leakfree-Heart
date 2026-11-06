@@ -97,6 +97,24 @@ def inject_fault(expl: dict, kind: str, topk: list[str], patient: dict, evidence
     return e, i
 
 
+def _write_blinded_audit(ctx: Ctx, audit: pd.DataFrame, per_cond: int = 60):
+    """Blinded sheet for human raters: LLM claims only, shuffled, no condition and no verifier verdict shown.
+    The key (condition, verifier verdict) is kept in a separate file used by scripts/audit_agreement.py."""
+    if audit.empty:
+        return
+    a = audit[audit.condition.isin(["llm_norag", "llm_rag", "llm_rag_verified"])]
+    if a.empty:
+        return
+    a = pd.concat([g.sample(min(per_cond, len(g)), random_state=ctx.seed) for _, g in a.groupby("condition")])
+    a = a.sample(frac=1.0, random_state=ctx.seed).reset_index(drop=True)
+    a.insert(0, "audit_id", range(1, len(a) + 1))
+    a["rater_A"] = ""
+    a["rater_B"] = ""
+    show = ["audit_id", "feature", "direction", "shap", "statement", "citations", "cited_text", "rater_A", "rater_B"]
+    ctx.save_table(a[show], "audit_blinded")
+    ctx.save_table(a[["audit_id", "condition", "patient", "verifier_pass"]], "audit_key")
+
+
 def run(ctx: Ctx) -> dict:
     cfg = ctx.cfg
     tm = timer()
@@ -143,7 +161,8 @@ def run(ctx: Ctx) -> dict:
                     audit.append(dict(patient=i, condition=cond, feature=c.get("feature"), direction=c.get("direction"),
                                       statement=c.get("statement"), citations=";".join(c.get("citations", [])),
                                       cited_text=" | ".join(retr.by_id[x].text for x in c.get("citations", []) if x in retr.by_id),
-                                      shap=attr.get(c.get("feature")), verifier_pass=bool(ck.passed),
+                                      shap=attr.get(c.get("feature")),
+                                      verifier_pass=bool(ck.model_faithful and not ck.safety) if cond == "llm_norag" else bool(ck.passed),
                                       verifier_reasons="; ".join(ck.reasons(cond != "llm_norag" and cond != "template")),
                                       human_label_faithful_and_supported=""))
     df = pd.DataFrame(rows)
@@ -153,6 +172,7 @@ def run(ctx: Ctx) -> dict:
     ctx.say("[E5b] condition summary:\n" + agg.round(3).to_string(index=False))
     ctx.save_json(examples, "faithfulness_examples")
     ctx.save_table(pd.DataFrame(audit), "faithfulness_audit_sample")
+    _write_blinded_audit(ctx, pd.DataFrame(audit))
 
     inj = _fault_validation(ctx, model, Xe, S, probs, retr, ver)
     _plot(ctx, agg)

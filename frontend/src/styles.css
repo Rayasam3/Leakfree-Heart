@@ -131,3 +131,32 @@ button, input, select { font: inherit; color: inherit; }
 .figs { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 18px; }
 .figs img { width: 100%; border: 1px solid var(--rule); border-radius: 6px; background: #fcfcfb; }
 @media (prefers-reduced-motion: reduce) { .scale .marker { transition: none; } }
+
+/* segmented switch (results tab, ECG source) */
+.results .seg { display: flex; width: fit-content; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; margin: 0 0 16px; background: var(--panel); }
+.seg button { background: none; border: 0; padding: 7px 13px; cursor: pointer; color: var(--ink-2); border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed='true'] { background: var(--ink); color: var(--paper); font-weight: 600; }
+.intake .seg { display: flex; } .intake .seg button { flex: 1; }
+.intake input[type='file'] { width: 100%; font-size: 13px; }
+code { background: var(--panel); border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; font-size: 13px; }
+
+/* ECG viewer */
+.ecg { margin-top: 28px; }
+.leads { border-top: 1px solid var(--rule); }
+.lead { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 10px; align-items: center; border-bottom: 1px solid var(--rule); }
+.lead .lname { display: grid; grid-template-columns: 30px 1fr; grid-template-rows: auto auto; gap: 0 6px; align-items: center; font-size: 13px; }
+.lead .lname small { grid-column: 2; color: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+.lead .ibar { height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden; display: block; }
+.lead .ibar i { display: block; height: 100%; background: var(--ink-3); }
+.lead.hot .lname b { color: var(--ink); } .lead.hot .ibar i { background: var(--ink); }
+.lead .trace { width: 100%; height: 54px; display: block; }
+.lead.axis { border-bottom: 0; } .lead.axis .ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); padding-top: 2px; }
+@media (max-width: 560px) { .lead { grid-template-columns: 78px minmax(0, 1fr); } }
+.check { margin-top: 20px; border-left: 3px solid var(--rule); padding: 2px 0 2px 14px; max-width: 78ch; }
+.check h3 { margin: 0 0 4px; font-size: 14px; }
+.check p { margin: 0 0 8px; font-family: var(--serif); font-size: 16px; }
+.check p.note { font-family: var(--sans); font-size: 12.5px; }
+.ref p:not(.sub) { margin: 0; font-family: var(--serif); font-size: 17px; }
+.ref { margin-bottom: 24px; }

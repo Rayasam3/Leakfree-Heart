@@ -43,9 +43,17 @@ except Exception:  # noqa: BLE001
 raw = ROOT / "data" / "raw"
 line((raw / "kaggle_heart.csv").exists(), "Kaggle copy (leakage audit)", str(raw / "kaggle_heart.csv"))
 uci = all((raw / "uci" / f).exists() for f in ["processed.cleveland.data", "processed.hungarian.data", "processed.switzerland.data", "processed.va.data"])
-line(uci, "UCI 4-site data", "run download_data.bat" if not uci else "found")
-line((ROOT / "knowledge_base" / "index" / "chunks.json").exists(), "Knowledge-base index", "run build_kb.bat if missing")
-line((ROOT / "models" / "artifact.joblib").exists(), "Trained model artifact", "run train_final.bat if missing")
+line(uci, "UCI 4-site data", "run: python -m leakfree_heart download-uci" if not uci else "found")
+kb_ok = (ROOT / "knowledge_base" / "index" / "chunks.json").exists()
+line(kb_ok, "Knowledge-base index", "found" if kb_ok else "run: python -m leakfree_heart build-kb")
+art_ok = (ROOT / "models" / "artifact.joblib").exists()
+line(art_ok, "Trained model artifact", "found" if art_ok else "run: python -m leakfree_heart train-final")
+ptb = ROOT / "data" / "raw" / "ptbxl"
+n_rec = len(list((ptb / "records100").rglob("*.hea"))) if (ptb / "records100").exists() else 0
+line(n_rec >= 21799, "PTB-XL ECG data", f"{n_rec}/21799 records" + ("" if n_rec >= 21799 else "  run: python -m leakfree_heart download-ptbxl"))
+ec = ROOT / "results_ecg" / "cache"
+ecg_ok = len(list(ec.glob("ecg_cnn_seed*.pt"))) > 0 if ec.exists() else False
+line(ecg_ok, "Trained ECG models", "found" if ecg_ok else "run: python -m leakfree_heart run-ecg")
 try:
     import requests
     r = requests.get("http://localhost:11434/api/tags", timeout=3)

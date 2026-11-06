@@ -1,0 +1,13 @@
+{
+  "primary": "ecg_cnn",
+  "temperatures": {
+    "tab_logreg": 0.8799074448458618,
+    "feat_xgb": 0.979625606412582,
+    "feat_xgb_tab": 0.9761679244969482,
+    "ecg_cnn": 1.3317283713231507,
+    "fusion_e2e": 1.3078066522867977,
+    "fusion_stack": 0.9683479928342569
+  },
+  "n_test": 2050,
+  "n_test_patients": 1792
+}

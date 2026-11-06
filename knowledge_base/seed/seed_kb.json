@@ -1,140 +1,335 @@
 {
-  "_readme": "Seed knowledge base: SHORT PARAPHRASES of well-known guideline statements, written so the pipeline runs offline. Every entry has verified=false. BEFORE PUBLICATION: check each entry against the cited source and set verified=true (or edit/remove it). Add full guideline PDFs to knowledge_base/raw/ and run build_kb to extend the base.",
-  "entries": [
-    {"id": "KB-001", "features": ["age"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Age and ASCVD risk",
-     "text": "Age is one of the strongest non-modifiable determinants of atherosclerotic cardiovascular disease (ASCVD) risk. The ACC/AHA pooled cohort equations estimate 10-year ASCVD risk in adults aged 40 to 79 years from age, sex, race, blood pressure, cholesterol, diabetes and smoking status.",
-     "verified": false},
-    {"id": "KB-002", "features": ["sex"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Sex and ASCVD risk",
-     "text": "Sex is a variable in the pooled cohort equations. At the same age men have on average a higher estimated ASCVD risk than premenopausal women, and coronary disease tends to present at a later age in women. Risk in women rises after menopause and is often underestimated.",
-     "verified": false},
-    {"id": "KB-003", "features": ["cp"], "kind": "guideline", "year": 2021,
-     "source": "2021 AHA/ACC Guideline for the Evaluation and Diagnosis of Chest Pain (Gulati et al., Circulation 2021)",
-     "title": "Typical and atypical angina",
-     "text": "Typical (classic) angina is substernal chest discomfort of characteristic quality and duration that is provoked by exertion or emotional stress and relieved by rest or nitroglycerin. Chest pain with all three features is typical angina, with two features atypical angina, and with one or none non-anginal chest pain. Typical angina carries a higher pretest probability of obstructive coronary artery disease.",
-     "verified": false},
-    {"id": "KB-004", "features": ["cp"], "kind": "project_observation", "year": 2025,
-     "source": "Computed in this project on the deduplicated Cleveland data (dataset-specific observation, not a guideline)",
-     "title": "Asymptomatic chest pain category in the Cleveland cohort",
-     "text": "In the Cleveland cohort, patients categorised as asymptomatic for chest pain had the highest observed prevalence of angiographic disease (about 73 percent of such patients). This most likely reflects a referral population in which asymptomatic patients were tested because of abnormal findings. It does not mean that having no symptoms is a risk factor, and silent ischaemia can occur without chest pain.",
-     "verified": false},
-    {"id": "KB-005", "features": ["trestbps"], "kind": "guideline", "year": 2017,
-     "source": "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults (Whelton et al., Hypertension 2018)",
-     "title": "Blood pressure categories",
-     "text": "ACC/AHA blood pressure categories: normal is below 120 and below 80 mmHg; elevated is 120 to 129 systolic and below 80 diastolic; stage 1 hypertension is 130 to 139 systolic or 80 to 89 diastolic; stage 2 hypertension is 140 mmHg or higher systolic or 90 mmHg or higher diastolic. Higher blood pressure is a major modifiable risk factor for coronary disease, stroke and heart failure.",
-     "verified": false},
-    {"id": "KB-006", "features": ["trestbps", "prevention"], "kind": "guideline", "year": 2017,
-     "source": "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults (Whelton et al., Hypertension 2018)",
-     "title": "Lifestyle measures that lower blood pressure",
-     "text": "Non-pharmacological measures that lower blood pressure include weight loss in people who are overweight, the DASH eating pattern, reduced sodium intake, higher potassium intake, regular aerobic physical activity and limiting alcohol. Decisions about medication should be made together with a clinician.",
-     "verified": false},
-    {"id": "KB-007", "features": ["trestbps"], "kind": "guideline", "year": 2017,
-     "source": "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults (Whelton et al., Hypertension 2018)",
-     "title": "A single reading is not a diagnosis",
-     "text": "The resting systolic pressure recorded on admission is a single measurement. Hypertension is diagnosed from the average of two or more careful readings obtained on two or more occasions, so one elevated value is a reason for confirmation rather than a diagnosis.",
-     "verified": false},
-    {"id": "KB-008", "features": ["chol"], "kind": "guideline", "year": 2001,
-     "source": "NCEP ATP III (2001) cholesterol categories; 2018 AHA/ACC Guideline on the Management of Blood Cholesterol (Grundy et al., Circulation 2019)",
-     "title": "Total cholesterol categories",
-     "text": "Total cholesterol below 200 mg/dL is considered desirable, 200 to 239 mg/dL borderline high, and 240 mg/dL or above high. Current ACC/AHA guidance emphasises LDL-cholesterol and overall cardiovascular risk when planning treatment, so total cholesterol on its own is a limited marker.",
-     "verified": false},
-    {"id": "KB-009", "features": ["chol"], "kind": "guideline", "year": 2019,
-     "source": "2018 AHA/ACC Guideline on the Management of Blood Cholesterol (Grundy et al., Circulation 2019)",
-     "title": "Statin decisions are risk based",
-     "text": "Under the 2018 AHA/ACC cholesterol guideline, statin therapy decisions depend on established ASCVD, LDL-cholesterol of 190 mg/dL or higher, diabetes at ages 40 to 75, and the estimated 10-year ASCVD risk, through a shared discussion between clinician and patient. Heart-healthy lifestyle remains the foundation of prevention.",
-     "verified": false},
-    {"id": "KB-010", "features": ["fbs"], "kind": "guideline", "year": 2024,
-     "source": "American Diabetes Association, Standards of Care in Diabetes (diagnostic criteria)",
-     "title": "Fasting glucose thresholds",
-     "text": "A confirmed fasting plasma glucose of 126 mg/dL or higher indicates diabetes, and 100 to 125 mg/dL indicates prediabetes. In this dataset the variable only records whether fasting blood sugar exceeded 120 mg/dL, so it is a coarse indicator.",
-     "verified": false},
-    {"id": "KB-011", "features": ["fbs"], "kind": "public_health", "year": 2024,
-     "source": "CDC and American Heart Association public information on diabetes and heart disease",
-     "title": "Diabetes and cardiovascular risk",
-     "text": "Adults with diabetes are about twice as likely to develop heart disease or stroke as adults without diabetes, and they tend to develop it at a younger age. Managing blood glucose, blood pressure and cholesterol together lowers that risk.",
-     "verified": false},
-    {"id": "KB-012", "features": ["restecg"], "kind": "dataset_doc", "year": 1989,
-     "source": "UCI Heart Disease dataset documentation (Detrano et al., Am J Cardiol 1989)",
-     "title": "Resting ECG categories in the dataset",
-     "text": "Resting electrocardiogram categories in the dataset are: normal; ST-T wave abnormality (T-wave inversion or ST elevation or depression of more than 0.05 mV); and probable or definite left ventricular hypertrophy by Estes criteria.",
-     "verified": false},
-    {"id": "KB-013", "features": ["restecg"], "kind": "guideline", "year": 2017,
-     "source": "2017 ACC/AHA High Blood Pressure Guideline (Whelton et al.); general cardiology references",
-     "title": "Left ventricular hypertrophy",
-     "text": "Left ventricular hypertrophy on the electrocardiogram is often a consequence of long-standing hypertension and is associated with higher cardiovascular risk. A resting ECG abnormality is non-specific and needs clinical correlation.",
-     "verified": false},
-    {"id": "KB-014", "features": ["thalach"], "kind": "guideline", "year": 2013,
-     "source": "Exercise Standards for Testing and Training: AHA Scientific Statement (Fletcher et al., Circulation 2013)",
-     "title": "Maximum heart rate during exercise testing",
-     "text": "Maximum heart rate during exercise testing is judged against the age-predicted maximum, roughly 220 minus age. Failing to reach about 85 percent of the age-predicted maximum reduces the sensitivity of a stress test, and a blunted heart-rate response to exercise (chronotropic incompetence) is associated with worse cardiovascular outcomes. Beta-blockers also lower the heart rate achieved.",
-     "verified": false},
-    {"id": "KB-015", "features": ["exang"], "kind": "guideline", "year": 2021,
-     "source": "Duke treadmill score (Mark et al., N Engl J Med 1991); 2021 AHA/ACC Chest Pain Guideline",
-     "title": "Exercise-induced angina",
-     "text": "Angina provoked during exercise testing indicates inducible myocardial ischaemia. It is one of the components of the Duke treadmill score, together with exercise capacity and the amount of ST-segment deviation, and it increases the likelihood of obstructive coronary disease.",
-     "verified": false},
-    {"id": "KB-016", "features": ["oldpeak"], "kind": "guideline", "year": 2002,
-     "source": "ACC/AHA 2002 Guideline Update for Exercise Testing (Gibbons et al., Circulation 2002)",
-     "title": "ST depression on exercise ECG",
-     "text": "Horizontal or downsloping ST-segment depression of at least 1 mm (0.1 mV), measured 60 to 80 ms after the J point, is the conventional criterion for a positive exercise ECG. Greater depression, earlier onset during exercise and slower recovery indicate more extensive ischaemia and a higher likelihood of obstructive coronary disease.",
-     "verified": false},
-    {"id": "KB-017", "features": ["slope"], "kind": "guideline", "year": 2002,
-     "source": "ACC/AHA 2002 Guideline Update for Exercise Testing (Gibbons et al.); UCI dataset documentation",
-     "title": "Slope of the peak-exercise ST segment",
-     "text": "The slope of the ST segment at peak exercise is described as upsloping, flat or downsloping. Downsloping and flat ST depression are more specific for ischaemia, whereas an upsloping response is less specific and is often normal.",
-     "verified": false},
-    {"id": "KB-018", "features": ["ca"], "kind": "dataset_doc", "year": 1989,
-     "source": "UCI Heart Disease dataset documentation (Detrano et al., Am J Cardiol 1989); project note",
-     "title": "Major vessels coloured by fluoroscopy",
-     "text": "The ca variable counts the major coronary vessels (0 to 3) coloured by fluoroscopy, and a higher count indicates more extensive coronary disease. Because it comes from invasive or advanced imaging it is not available in routine primary-care screening, so a model that relies on it is not a screening tool.",
-     "verified": false},
-    {"id": "KB-019", "features": ["thal"], "kind": "dataset_doc", "year": 1989,
-     "source": "UCI Heart Disease dataset documentation (Detrano et al.); nuclear cardiology references",
-     "title": "Thallium stress test result",
-     "text": "Thallium myocardial perfusion imaging is reported in the dataset as normal, fixed defect or reversible defect. A fixed defect suggests scar from a previous infarction, while a reversible defect indicates stress-induced ischaemia in viable myocardium and is a stronger marker of active obstructive coronary disease.",
-     "verified": false},
-    {"id": "KB-020", "features": ["prevention"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Physical activity",
-     "text": "Adults should get at least 150 minutes per week of moderate-intensity or 75 minutes per week of vigorous-intensity aerobic physical activity to reduce ASCVD risk, and any increase from inactivity is beneficial. People with known or suspected heart disease should agree an exercise plan with their clinician first.",
-     "verified": false},
-    {"id": "KB-021", "features": ["prevention"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Heart-healthy diet",
-     "text": "A diet that emphasises vegetables, fruits, nuts, whole grains, lean protein and fish, and minimises trans fats, processed meats, refined carbohydrates and sugar-sweetened beverages, is recommended to lower ASCVD risk.",
-     "verified": false},
-    {"id": "KB-022", "features": ["prevention"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Tobacco cessation",
-     "text": "All adults should be asked about tobacco use, and people who smoke should be advised and assisted to quit, because stopping smoking is among the most effective measures for preventing cardiovascular disease.",
-     "verified": false},
-    {"id": "KB-023", "features": ["prevention"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Weight management",
-     "text": "For adults with overweight or obesity, weight loss achieved through counselling and lifestyle change improves cardiovascular risk factors such as blood pressure, lipids and glucose.",
-     "verified": false},
-    {"id": "KB-024", "features": ["prevention", "general"], "kind": "guideline", "year": 2019,
-     "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
-     "title": "Risk estimates support clinical judgement",
-     "text": "Risk estimates inform but do not replace clinical judgement. Decisions should follow a clinician-patient risk discussion that considers individual risk-enhancing factors and the patient's preferences.",
-     "verified": false},
-    {"id": "KB-025", "features": ["cp", "general"], "kind": "guideline", "year": 2021,
-     "source": "2021 AHA/ACC Guideline for the Evaluation and Diagnosis of Chest Pain (Gulati et al., Circulation 2021)",
-     "title": "When chest pain needs urgent care",
-     "text": "New, severe, prolonged or worsening chest pain, or chest pain accompanied by breathlessness, sweating, nausea or fainting, should prompt emergency evaluation by calling emergency services rather than waiting for a routine appointment.",
-     "verified": false},
-    {"id": "KB-026", "features": ["cp", "exang", "oldpeak", "general"], "kind": "guideline", "year": 2021,
-     "source": "2021 AHA/ACC Guideline for the Evaluation and Diagnosis of Chest Pain (Gulati et al., Circulation 2021)",
-     "title": "Testing for stable chest pain",
-     "text": "For stable chest pain the guideline recommends risk stratification and diagnostic testing, such as exercise ECG, stress imaging or coronary CT angiography, chosen according to pretest probability, symptoms and the patient's ability to exercise.",
-     "verified": false},
-    {"id": "KB-027", "features": ["general"], "kind": "dataset_doc", "year": 1989,
-     "source": "UCI Heart Disease dataset documentation (Detrano et al., Am J Cardiol 1989)",
-     "title": "Limits of the UCI cohorts",
-     "text": "The UCI heart disease cohorts are small and come from four hospitals studied in the 1980s. Disease is defined by angiography as more than 50 percent diameter narrowing of a major vessel. Models trained on them have not been validated for current populations or for screening in the general community.",
-     "verified": false}
-  ]
+ "_readme": "Seed knowledge base: SHORT PARAPHRASES of well-known guideline statements, written so the pipeline runs offline. Every entry has verified=false. BEFORE PUBLICATION: check each entry against the cited source and set verified=true (or edit/remove it). Add full guideline PDFs to knowledge_base/raw/ and run build_kb to extend the base.",
+ "entries": [
+  {
+   "id": "KB-001",
+   "features": [
+    "age"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Age and ASCVD risk",
+   "text": "Age is one of the strongest non-modifiable determinants of atherosclerotic cardiovascular disease (ASCVD) risk. The ACC/AHA pooled cohort equations estimate 10-year ASCVD risk in adults aged 40 to 79 years from age, sex, race, blood pressure, cholesterol, diabetes and smoking status.",
+   "verified": false
+  },
+  {
+   "id": "KB-002",
+   "features": [
+    "sex"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Sex and ASCVD risk",
+   "text": "Sex is a variable in the pooled cohort equations. At the same age men have on average a higher estimated ASCVD risk than premenopausal women, and coronary disease tends to present at a later age in women. Risk in women rises after menopause and is often underestimated.",
+   "verified": false
+  },
+  {
+   "id": "KB-003",
+   "features": [
+    "cp"
+   ],
+   "kind": "guideline",
+   "year": 2021,
+   "source": "2021 AHA/ACC Guideline for the Evaluation and Diagnosis of Chest Pain (Gulati et al., Circulation 2021)",
+   "title": "Typical and atypical angina",
+   "text": "Typical (classic) angina is substernal chest discomfort of characteristic quality and duration that is provoked by exertion or emotional stress and relieved by rest or nitroglycerin. Chest pain with all three features is typical angina, with two features atypical angina, and with one or none non-anginal chest pain. Typical angina carries a higher pretest probability of obstructive coronary artery disease.",
+   "verified": false
+  },
+  {
+   "id": "KB-004",
+   "features": [
+    "cp"
+   ],
+   "kind": "project_observation",
+   "year": 2025,
+   "source": "Computed in this project on the deduplicated Cleveland data (dataset-specific observation, not a guideline)",
+   "title": "Asymptomatic chest pain category in the Cleveland cohort",
+   "text": "In the Cleveland cohort, patients categorised as asymptomatic for chest pain had the highest observed prevalence of angiographic disease (about 73 percent of such patients). This most likely reflects a referral population in which asymptomatic patients were tested because of abnormal findings. It does not mean that having no symptoms is a risk factor, and silent ischaemia can occur without chest pain.",
+   "verified": false
+  },
+  {
+   "id": "KB-005",
+   "features": [
+    "trestbps"
+   ],
+   "kind": "guideline",
+   "year": 2017,
+   "source": "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults (Whelton et al., Hypertension 2018)",
+   "title": "Blood pressure categories",
+   "text": "ACC/AHA blood pressure categories: normal is below 120 and below 80 mmHg; elevated is 120 to 129 systolic and below 80 diastolic; stage 1 hypertension is 130 to 139 systolic or 80 to 89 diastolic; stage 2 hypertension is 140 mmHg or higher systolic or 90 mmHg or higher diastolic. Higher blood pressure is a major modifiable risk factor for coronary disease, stroke and heart failure.",
+   "verified": false
+  },
+  {
+   "id": "KB-006",
+   "features": [
+    "trestbps",
+    "prevention"
+   ],
+   "kind": "guideline",
+   "year": 2017,
+   "source": "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults (Whelton et al., Hypertension 2018)",
+   "title": "Lifestyle measures that lower blood pressure",
+   "text": "Non-pharmacological measures that lower blood pressure include weight loss in people who are overweight, the DASH eating pattern, reduced sodium intake, higher potassium intake, regular aerobic physical activity and limiting alcohol. Decisions about medication should be made together with a clinician.",
+   "verified": false
+  },
+  {
+   "id": "KB-007",
+   "features": [
+    "trestbps"
+   ],
+   "kind": "guideline",
+   "year": 2017,
+   "source": "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults (Whelton et al., Hypertension 2018)",
+   "title": "A single reading is not a diagnosis",
+   "text": "The resting systolic pressure recorded on admission is a single measurement. Hypertension is diagnosed from the average of two or more careful readings obtained on two or more occasions, so one elevated value is a reason for confirmation rather than a diagnosis.",
+   "verified": false
+  },
+  {
+   "id": "KB-008",
+   "features": [
+    "chol"
+   ],
+   "kind": "guideline",
+   "year": 2001,
+   "source": "NCEP ATP III (2001) cholesterol categories; 2018 AHA/ACC Guideline on the Management of Blood Cholesterol (Grundy et al., Circulation 2019)",
+   "title": "Total cholesterol categories",
+   "text": "Total cholesterol below 200 mg/dL is considered desirable, 200 to 239 mg/dL borderline high, and 240 mg/dL or above high. Current ACC/AHA guidance emphasises LDL-cholesterol and overall cardiovascular risk when planning treatment, so total cholesterol on its own is a limited marker.",
+   "verified": false
+  },
+  {
+   "id": "KB-009",
+   "features": [
+    "chol"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2018 AHA/ACC Guideline on the Management of Blood Cholesterol (Grundy et al., Circulation 2019)",
+   "title": "Statin decisions are risk based",
+   "text": "Under the 2018 AHA/ACC cholesterol guideline, statin therapy decisions depend on established ASCVD, LDL-cholesterol of 190 mg/dL or higher, diabetes at ages 40 to 75, and the estimated 10-year ASCVD risk, through a shared discussion between clinician and patient. Heart-healthy lifestyle remains the foundation of prevention.",
+   "verified": false
+  },
+  {
+   "id": "KB-010",
+   "features": [
+    "fbs"
+   ],
+   "kind": "guideline",
+   "year": 2024,
+   "source": "American Diabetes Association, Standards of Care in Diabetes (diagnostic criteria)",
+   "title": "Fasting glucose thresholds",
+   "text": "A confirmed fasting plasma glucose of 126 mg/dL or higher indicates diabetes, and 100 to 125 mg/dL indicates prediabetes. In this dataset the variable only records whether fasting blood sugar exceeded 120 mg/dL, so it is a coarse indicator.",
+   "verified": false
+  },
+  {
+   "id": "KB-011",
+   "features": [
+    "fbs"
+   ],
+   "kind": "public_health",
+   "year": 2024,
+   "source": "CDC and American Heart Association public information on diabetes and heart disease",
+   "title": "Diabetes and cardiovascular risk",
+   "text": "Adults with diabetes are about twice as likely to develop heart disease or stroke as adults without diabetes, and they tend to develop it at a younger age. Managing blood glucose, blood pressure and cholesterol together lowers that risk.",
+   "verified": false
+  },
+  {
+   "id": "KB-012",
+   "features": [
+    "restecg"
+   ],
+   "kind": "dataset_doc",
+   "year": 1989,
+   "source": "UCI Heart Disease dataset documentation (Detrano et al., Am J Cardiol 1989)",
+   "title": "Resting ECG categories in the dataset",
+   "text": "Resting electrocardiogram categories in the dataset are: normal; ST-T wave abnormality (T-wave inversion or ST elevation or depression of more than 0.05 mV); and probable or definite left ventricular hypertrophy by Estes criteria.",
+   "verified": false
+  },
+  {
+   "id": "KB-013",
+   "features": [
+    "restecg"
+   ],
+   "kind": "guideline",
+   "year": 2017,
+   "source": "2017 ACC/AHA High Blood Pressure Guideline (Whelton et al.); general cardiology references",
+   "title": "Left ventricular hypertrophy",
+   "text": "Left ventricular hypertrophy on the electrocardiogram is often a consequence of long-standing hypertension and is associated with higher cardiovascular risk. A resting ECG abnormality is non-specific and needs clinical correlation.",
+   "verified": false
+  },
+  {
+   "id": "KB-014",
+   "features": [
+    "thalach"
+   ],
+   "kind": "guideline",
+   "year": 2013,
+   "source": "Exercise Standards for Testing and Training: AHA Scientific Statement (Fletcher et al., Circulation 2013)",
+   "title": "Maximum heart rate during exercise testing",
+   "text": "Maximum heart rate during exercise testing is judged against the age-predicted maximum, roughly 220 minus age. Failing to reach about 85 percent of the age-predicted maximum reduces the sensitivity of a stress test, and a blunted heart-rate response to exercise (chronotropic incompetence) is associated with worse cardiovascular outcomes. Beta-blockers also lower the heart rate achieved.",
+   "verified": false
+  },
+  {
+   "id": "KB-015",
+   "features": [
+    "exang"
+   ],
+   "kind": "guideline",
+   "year": 2021,
+   "source": "Duke treadmill score (Mark et al., N Engl J Med 1991); 2021 AHA/ACC Chest Pain Guideline",
+   "title": "Exercise-induced angina",
+   "text": "Angina provoked during exercise testing indicates inducible myocardial ischaemia. It is one of the components of the Duke treadmill score, together with exercise capacity and the amount of ST-segment deviation, and it increases the likelihood of obstructive coronary disease.",
+   "verified": false
+  },
+  {
+   "id": "KB-016",
+   "features": [
+    "oldpeak"
+   ],
+   "kind": "guideline",
+   "year": 2002,
+   "source": "ACC/AHA 2002 Guideline Update for Exercise Testing (Gibbons et al., Circulation 2002)",
+   "title": "ST depression on exercise ECG",
+   "text": "Horizontal or downsloping ST-segment depression of at least 1 mm (0.1 mV), measured 60 to 80 ms after the J point, is the conventional criterion for a positive exercise ECG. Greater depression, earlier onset during exercise and slower recovery indicate more extensive ischaemia and a higher likelihood of obstructive coronary disease.",
+   "verified": false
+  },
+  {
+   "id": "KB-017",
+   "features": [
+    "slope"
+   ],
+   "kind": "guideline",
+   "year": 2002,
+   "source": "ACC/AHA 2002 Guideline Update for Exercise Testing (Gibbons et al.); UCI dataset documentation",
+   "title": "Slope of the peak-exercise ST segment",
+   "text": "The slope of the ST segment at peak exercise is described as upsloping, flat or downsloping. Downsloping and flat ST depression are more specific for ischaemia, whereas an upsloping response is less specific and is often normal.",
+   "verified": false
+  },
+  {
+   "id": "KB-018",
+   "features": [
+    "ca"
+   ],
+   "kind": "dataset_doc",
+   "year": 1989,
+   "source": "UCI Heart Disease dataset documentation (Detrano et al., Am J Cardiol 1989); project note",
+   "title": "Major vessels coloured by fluoroscopy",
+   "text": "The ca variable counts the major coronary vessels (0 to 3) coloured by fluoroscopy, and a higher count indicates more extensive coronary disease. Because it comes from invasive or advanced imaging it is not available in routine primary-care screening, so a model that relies on it is not a screening tool.",
+   "verified": false
+  },
+  {
+   "id": "KB-019",
+   "features": [
+    "thal"
+   ],
+   "kind": "dataset_doc",
+   "year": 1989,
+   "source": "UCI Heart Disease dataset documentation (Detrano et al.); nuclear cardiology references",
+   "title": "Thallium stress test result",
+   "text": "Thallium myocardial perfusion imaging is reported in the dataset as normal, fixed defect or reversible defect. A fixed defect suggests scar from a previous infarction, while a reversible defect indicates stress-induced ischaemia in viable myocardium and is a stronger marker of active obstructive coronary disease.",
+   "verified": false
+  },
+  {
+   "id": "KB-020",
+   "features": [
+    "prevention"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Physical activity",
+   "text": "Adults should get at least 150 minutes per week of moderate-intensity or 75 minutes per week of vigorous-intensity aerobic physical activity to reduce ASCVD risk, and any increase from inactivity is beneficial. People with known or suspected heart disease should agree an exercise plan with their clinician first.",
+   "verified": false
+  },
+  {
+   "id": "KB-021",
+   "features": [
+    "prevention"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Heart-healthy diet",
+   "text": "A diet that emphasises vegetables, fruits, nuts, whole grains, lean protein and fish, and minimises trans fats, processed meats, refined carbohydrates and sugar-sweetened beverages, is recommended to lower ASCVD risk.",
+   "verified": false
+  },
+  {
+   "id": "KB-022",
+   "features": [
+    "prevention"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Tobacco cessation",
+   "text": "All adults should be asked about tobacco use, and people who smoke should be advised and assisted to quit, because stopping smoking is among the most effective measures for preventing cardiovascular disease.",
+   "verified": false
+  },
+  {
+   "id": "KB-023",
+   "features": [
+    "prevention"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Weight management",
+   "text": "For adults with overweight or obesity, weight loss achieved through counselling and lifestyle change improves cardiovascular risk factors such as blood pressure, lipids and glucose.",
+   "verified": false
+  },
+  {
+   "id": "KB-024",
+   "features": [
+    "prevention",
+    "general"
+   ],
+   "kind": "guideline",
+   "year": 2019,
+   "source": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease (Arnett et al., Circulation 2019)",
+   "title": "Risk estimates support clinical judgement",
+   "text": "Risk estimates inform but do not replace clinical judgement. Decisions should follow a clinician-patient risk discussion that considers individual risk-enhancing factors and the patient's preferences.",
+   "verified": false
+  },
+  {
+   "id": "KB-025",
+   "features": [
+    "cp",
+    "general"
+   ],
+   "kind": "guideline",
+   "year": 2021,
+   "source": "2021 AHA/ACC Guideline for the Evaluation and Diagnosis of Chest Pain (Gulati et al., Circulation 2021)",
+   "title": "When chest pain needs urgent care",
+   "text": "New, severe, prolonged or worsening chest pain, or chest pain accompanied by breathlessness, sweating, nausea or fainting, should prompt emergency evaluation by calling emergency services rather than waiting for a routine appointment.",
+   "verified": false
+  },
+  {
+   "id": "KB-026",
+   "features": [
+    "cp",
+    "exang",
+    "oldpeak",
+    "general"
+   ],
+   "kind": "guideline",
+   "year": 2021,
+   "source": "2021 AHA/ACC Guideline for the Evaluation and Diagnosis of Chest Pain (Gulati et al., Circulation 2021)",
+   "title": "Testing for stable chest pain",
+   "text": "For stable chest pain the guideline recommends risk stratification and diagnostic testing, such as exercise ECG, stress imaging or coronary CT angiography, chosen according to pretest probability, symptoms and the patient's ability to exercise.",
+   "verified": false
+  },
+  {
+   "id": "KB-027",
+   "features": [
+    "general"
+   ],
+   "kind": "dataset_doc",
+   "year": 1989,
+   "source": "UCI Heart Disease dataset documentation (Detrano et al., Am J Cardiol 1989)",
+   "title": "Limits of the UCI cohorts",
+   "text": "The UCI heart disease cohorts are small and come from four hospitals studied in the 1980s. Disease is defined by angiography as more than 50 percent diameter narrowing of a major vessel. Models trained on them have not been validated for current populations or for screening in the general community.",
+   "verified": false
+  }
+ ]
 }

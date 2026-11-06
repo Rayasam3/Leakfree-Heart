@@ -8,3 +8,8 @@ data/raw/
 results/cache/
 knowledge_base/index/
 knowledge_base/raw/
+results_ecg/cache/
+results_ecg_demo/
+data/raw/ptbxl_demo/
+*.egg-info/
+*.pyc

@@ -193,8 +193,13 @@ class Verifier:
             a = attr.get(f, 0.0)
             ck.direction_ok = ck.valid_feature and d is not None and (
                 abs(a) < self.min_abs or (d == "increases") == (a > 0))
+            # the prompt gives the model |SHAP| x 100 (percentage points) for each feature,
+            # so quoting that claim's own contribution is grounded (rounded to 1 dp or whole number)
+            contrib = abs(a) * 100.0
+            def _is_contrib(x: float) -> bool:
+                return abs(x - contrib) <= (0.51 if x == round(x) else 0.06)
             bad = [x for x in numbers_in(statement)
-                   if not any(abs(x - y) < 1e-6 for y in patient_nums | provided_nums)]
+                   if not (any(abs(x - y) < 1e-6 for y in patient_nums | provided_nums) or _is_contrib(x))]
             ck.unverifiable_numbers, ck.numbers_ok = bad, not bad
             ck.has_citation = len(cites) > 0
             ck.fabricated_ids = [c for c in cites if c not in provided_ids]

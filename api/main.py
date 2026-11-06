@@ -1,6 +1,7 @@
 """FastAPI backend for LeakFree-Heart.
 
-    uvicorn api.main:app --port 8000        (or start_api.bat)
+    python -m leakfree_heart serve          (API + web app on http://127.0.0.1:8000)
+    uvicorn api.main:app --port 8000        (API only)
 
 Endpoints
   GET  /api/health      service status (model, LLM back-end, retriever)
@@ -9,11 +10,16 @@ Endpoints
   POST /api/explain     prediction + SHAP attributions for all 13 features
   POST /api/report      prediction + SHAP + retrieved guideline evidence + cited explanation + verification
   GET  /api/results     list of experiment tables; /api/results/{name} returns one as JSON
+  GET  /api/ecg/status  ECG model status, calibration and deferral rates on the held-out test fold
+  GET  /api/ecg/samples held-out example ECGs (ids, age, sex only; the recorded diagnosis is revealed after prediction)
+  POST /api/ecg/predict probability, answer-or-defer decision and per-lead explanation for one ECG
+  GET  /api/ecg/results list of ECG study tables; /api/ecg/results/{name} returns one as JSON
 Research prototype - not a medical device, not for clinical use.
 """
 from __future__ import annotations
 
 import json
+import os
 import sys
 import threading
 from contextlib import asynccontextmanager
@@ -39,9 +45,16 @@ from leakfree_heart.rag.faithfulness import Verifier  # noqa: E402
 from leakfree_heart.rag.generator import MockBackend, generate_explanation, get_backend, render_text  # noqa: E402
 from leakfree_heart.uncertainty import decisions_from_sets, prediction_sets  # noqa: E402
 
+from leakfree_heart.ecg.service import ECGService  # noqa: E402
+
 DISCLAIMER = ("Research prototype built on small public datasets (UCI Heart Disease). It is NOT a medical device, "
               "does not diagnose, and must not guide clinical decisions. Discuss any health concern with a clinician. "
               "For new, severe or worsening chest pain call your local emergency number.")
+
+ECG_DISCLAIMER = ("Research prototype trained on PTB-XL, a public research ECG dataset. It is NOT a medical device, does not "
+                  "diagnose, and must not guide clinical decisions. Discuss any health concern with a clinician. "
+                  "For new, severe or worsening chest pain call your local emergency number.")
+
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
@@ -62,16 +75,27 @@ class State:
     backend = None
     lock = threading.Lock()
     err = None
+    ecg: ECGService | None = None
 
 
 S = State()
 
 
+def _ecg_paths(cfg: dict) -> tuple[Path, Path]:
+    """PTB-XL root and ECG results folder (env vars let tests and demos point at other folders)."""
+    e = cfg.get("ecg", {})
+    root = ROOT / os.environ.get("LEAKFREE_ECG_ROOT", e.get("root", "data/raw/ptbxl"))
+    res = ROOT / os.environ.get("LEAKFREE_ECG_RESULTS", e.get("results_dir", "results_ecg"))
+    return root, res
+
+
 def _load():
     S.cfg = load_config()
+    root, res = _ecg_paths(S.cfg)
+    S.ecg = ECGService(root, res, S.cfg.get("ecg", {}), S.cfg["project"]["seed"])
     f = path(S.cfg, "models") / "artifact.joblib"
     if not f.exists():
-        S.err = "Model artifact missing. Run train_final.bat (python scripts/train_final.py)."
+        S.err = "Model artifact missing. Run:  python -m leakfree_heart train-final"
         return
     S.art = joblib.load(f)
     kb = path(S.cfg, "knowledge_base")
@@ -209,6 +233,72 @@ def report(req: ReportRequest):
 RES = ROOT / "results"
 
 
+def _table_json(f: Path) -> dict:
+    """CSV -> JSON; tidies numpy reprs such as 'np.float64(0.5)' that older runs wrote inside CI tuples."""
+    import re
+    df = pd.read_csv(f)
+    for c in df.select_dtypes(exclude="number").columns:
+        df[c] = df[c].map(lambda v: re.sub(r"np\.float64\(([^)]*)\)", r"\1", v) if isinstance(v, str) else v)
+    return {"columns": list(df.columns), "rows": json.loads(df.to_json(orient="records"))}
+
+
+# ----------------------------------------------------------------------------- ECG (multimodal) endpoints
+def _ecg() -> ECGService:
+    if S.ecg is None or not S.ecg.ready:
+        raise HTTPException(503, (S.ecg.error if S.ecg else None) or "ECG model not loaded")
+    return S.ecg
+
+
+class EcgRequest(BaseModel):
+    """Either `ecg_id` (a held-out test ECG) or `signal` (+ age, sex).
+    signal: 1000 rows x 12 columns, leads I, II, III, aVR, aVL, aVF, V1-V6, millivolts, 100 Hz.
+    sex uses the PTB-XL coding: 0 = male, 1 = female."""
+    ecg_id: int | None = None
+    signal: list[list[float]] | None = None
+    age: float | None = Field(None, ge=18, le=100)
+    sex: int | None = Field(None, ge=0, le=1)
+    alpha: float = 0.05
+
+
+@app.get("/api/ecg/status")
+def ecg_status():
+    return S.ecg.status() if S.ecg else {"ready": False, "detail": "not loaded"}
+
+
+@app.get("/api/ecg/samples")
+def ecg_samples():
+    return {"samples": _ecg().samples()}
+
+
+@app.post("/api/ecg/predict")
+def ecg_predict(req: EcgRequest):
+    svc = _ecg()
+    sig = None if req.signal is None else np.asarray(req.signal, dtype=np.float32)
+    try:
+        return {**svc.predict(sig, req.ecg_id, req.age, req.sex, req.alpha), "disclaimer": ECG_DISCLAIMER}
+    except ValueError as e:
+        raise HTTPException(422, str(e)) from e
+
+
+def _ecg_res() -> Path:
+    return _ecg_paths(S.cfg or load_config())[1]
+
+
+@app.get("/api/ecg/results")
+def ecg_results_index():
+    t, fg = _ecg_res() / "tables", _ecg_res() / "figures"
+    return {"tables": sorted(p.stem for p in t.glob("*.csv")) if t.exists() else [],
+            "figures": sorted(p.name for p in fg.glob("*.png")) if fg.exists() else []}
+
+
+@app.get("/api/ecg/results/{name}")
+def ecg_results_table(name: str):
+    f = _ecg_res() / "tables" / f"{Path(name).stem}.csv"
+    if not f.exists():
+        raise HTTPException(404, "no such table")
+    return _table_json(f)
+
+
 @app.get("/api/results")
 def results_index():
     t = RES / "tables"
@@ -221,10 +311,17 @@ def results_table(name: str):
     f = RES / "tables" / f"{Path(name).stem}.csv"
     if not f.exists():
         raise HTTPException(404, "no such table")
-    df = pd.read_csv(f)
-    return {"columns": list(df.columns), "rows": json.loads(df.to_json(orient="records"))}
+    return _table_json(f)
 
 
 (RES / "figures").mkdir(parents=True, exist_ok=True)
-if True:
-    app.mount("/figures", StaticFiles(directory=str(RES / "figures")), name="figures")
+_ECG_FIG = _ecg_paths(load_config())[1] / "figures"
+_ECG_FIG.mkdir(parents=True, exist_ok=True)
+app.mount("/figures", StaticFiles(directory=str(RES / "figures")), name="figures")
+app.mount("/ecg-figures", StaticFiles(directory=str(_ECG_FIG)), name="ecg-figures")
+
+# The built React app (frontend/dist) is served from the same port, so one command runs everything.
+# It is mounted last so that it never shadows the /api routes.
+DIST = ROOT / "frontend" / "dist"
+if (DIST / "index.html").exists():
+    app.mount("/", StaticFiles(directory=str(DIST), html=True), name="ui")

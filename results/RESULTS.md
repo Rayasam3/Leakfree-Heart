@@ -152,10 +152,10 @@ Selective summary: {"aurc": 0.06268940493631274, "oracle_aurc": 0.01242664772636
 | condition | n_patients | claim_faithful_rate | evidence_grounded_rate | fully_verified_rate | recall_at_k | efs | unverifiable_number_rate | fabricated_citation_rate | safety_violation_rate | valid_json | readability_fre | n_llm_calls | n_repairs | n_pruned |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | template | 40 | 0.990 | 0.000 | 0.985 | 1.000 | 0.994 | 0.010 | 0.000 | 0.005 | 1.000 | 36.066 | 0.000 | 0.000 | 0.000 |
-| template_rag | 40 | 1.000 | 1.000 | 0.995 | 1.000 | 1.000 | 0.000 | 0.000 | 0.005 | 1.000 | 28.119 | 0.000 | 0.000 | 0.000 |
-| llm_norag | 38 | 0.332 | 0.000 | 0.332 | 1.000 | 0.336 | 0.658 | 0.000 | 0.000 | 1.000 | 47.430 | 1.000 | 0.000 | 0.000 |
-| llm_rag | 39 | 0.711 | 0.915 | 0.682 | 0.985 | 0.746 | 0.026 | 0.005 | 0.000 | 1.000 | 32.287 | 1.000 | 0.000 | 0.000 |
-| llm_rag_verified | 39 | 1.000 | 1.000 | 1.000 | 0.964 | 0.980 | 0.000 | 0.000 | 0.000 | 1.000 | 31.387 | 2.026 | 1.026 | 0.538 |
+| template_rag | 40 | 1.000 | 1.000 | 0.995 | 1.000 | 1.000 | 0.000 | 0.000 | 0.005 | 1.000 | 28.545 | 0.000 | 0.000 | 0.000 |
+| llm_norag | 40 | 0.902 | 0.000 | 0.896 | 0.995 | 0.909 | 0.004 | 0.000 | 0.006 | 1.000 | 47.205 | 1.000 | 0.000 | 0.000 |
+| llm_rag | 40 | 0.767 | 0.923 | 0.757 | 0.945 | 0.807 | 0.005 | 0.000 | 0.000 | 0.950 | 35.349 | 1.000 | 0.000 | 0.000 |
+| llm_rag_verified | 40 | 0.950 | 0.950 | 0.950 | 0.895 | 0.917 | 0.000 | 0.000 | 0.000 | 0.950 | 31.904 | 1.625 | 0.625 | 0.325 |
 
 Verifier validation by fault injection:
 
@@ -167,7 +167,7 @@ Verifier validation by fault injection:
 | unsafe_statement | 40 | 1.000 | 1.000 | 0.025 |
 | unsupported_citation | 40 | 1.000 | 1.000 | 0.000 |
 | unsupported_statement | 40 | 1.000 | 1.000 | 0.025 |
-| wrong_number | 40 | 1.000 | 1.000 | 0.025 |
+| wrong_number | 40 | 0.975 | 0.975 | 0.025 |
 
 ![faith](figures/fig_faithfulness.png)
 

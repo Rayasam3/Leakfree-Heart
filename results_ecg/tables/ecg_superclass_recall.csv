@@ -1,0 +1,6 @@
+superclass,n_test,recall_at_0.5
+MI,415,0.8747
+STTC,506,0.8814
+CD,496,0.8347
+HYP,222,0.8559
+NORM (specificity),909,0.9505

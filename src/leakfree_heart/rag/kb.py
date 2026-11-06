@@ -64,9 +64,65 @@ def chunk_words(text: str, size: int = 140, overlap: int = 30) -> list[str]:
     return [" ".join(words[i:i + size]) for i in range(0, max(1, len(words) - overlap), step)]
 
 
+# ---- cleaning of scraped web text (MedlinePlus, NHLBI, WHO ...): remove navigation / link-list boilerplate
+_BOILER = re.compile(
+    r"(also in spanish|medical encyclopedia|medlineplus health topic|clinicaltrials\.gov|journal articles|"
+    r"see more articles|related health topics|fact ?sheet|national library of medicine|texas heart institute|"
+    r"american college of|american heart association\)|health topic \(|article:|learn more|read more|"
+    r"view the fact sheet|for parents|last updated|skip to|sign up|subscribe|cookie|privacy policy|"
+    r"copyright|all rights reserved|return to top|share this|print this|\(spanish\))", re.I)
+
+
+_GLOSSARY = re.compile(r"\b[\w-]+ \([A-Za-z]{2,}(?:-[A-Za-z]{2,})*\): .*?\. (?=[a-z,\-]|\. )")
+
+
+def clean_web_text(text: str) -> str:
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"https?://\S+", " ", text)
+    text = _GLOSSARY.sub("", text)                       # inline tooltip glossary (NHLBI): "artery (ARR-tuh-ree): A blood vessel ..."
+    text = re.sub(r"See, Play and Learn|Prevention and Risk Factors|< Back To Home", " ", text)
+    text = re.sub(r"\(\s+", "(", text)
+    text = re.sub(r"\s+\)", ")", text)
+    text = re.sub(r"\s+([,.;:])", r"\1", text)
+    text = re.sub(r"(?:\s*\.){2,}", ".", text)
+    text = re.sub(r"(\w) -(\w)", r"\1-\2", text)
+    sents = re.split(r"(?<=[.!?])\s+(?=[A-Z])", text)
+    keep = []
+    for sn in sents:
+        sn = sn.strip()
+        w = sn.split()
+        if len(w) < 7 or len(w) > 80 or sn.endswith("?"):   # too short, too long, or a question heading
+            continue
+        if _BOILER.search(sn):
+            continue
+        caps = sum(1 for x in w if x[:1].isupper())
+        if caps / len(w) > 0.45:          # title lists / link lists
+            continue
+        if sn.count("(") >= 3:
+            continue
+        keep.append(sn)
+    return " ".join(keep)
+
+
+def chunk_sentences(text: str, min_words: int = 40, max_words: int = 110) -> list[str]:
+    sents = re.split(r"(?<=[.!?])\s+(?=[A-Z])", text)
+    out, cur, n = [], [], 0
+    for sn in sents:
+        k = len(sn.split())
+        if cur and n + k > max_words:
+            out.append(" ".join(cur))
+            cur, n = [], 0
+        cur.append(sn)
+        n += k
+    if cur:
+        out.append(" ".join(cur))
+    return [c for c in out if len(c.split()) >= min_words]
+
+
 def load_document_chunks(kb_dir: Path, size: int, overlap: int) -> list[Chunk]:
     """Chunk every extracted text file in knowledge_base/raw_text/ (created by scripts/download_guidelines.py
-    or build_kb.py from PDFs in knowledge_base/raw/). Metadata comes from knowledge_base/sources.yaml."""
+    or build_kb.py from PDFs in knowledge_base/raw/). Metadata comes from knowledge_base/sources.yaml.
+    Scraped text is cleaned first and cut on sentence boundaries."""
     meta: dict[str, dict] = {}
     sy = Path(kb_dir) / "sources.yaml"
     if sy.exists():
@@ -76,10 +132,8 @@ def load_document_chunks(kb_dir: Path, size: int, overlap: int) -> list[Chunk]:
     for f in sorted((Path(kb_dir) / "raw_text").glob("*.txt")):
         sid = f.stem
         m = meta.get(sid, {})
-        text = re.sub(r"\s+", " ", f.read_text(encoding="utf-8", errors="ignore"))
-        for i, ch in enumerate(chunk_words(text, size, overlap)):
-            if len(ch.split()) < 25:
-                continue
+        text = clean_web_text(f.read_text(encoding="utf-8", errors="ignore"))
+        for i, ch in enumerate(chunk_sentences(text)):
             feats = [x for x in tag_features(ch) if x in FEATURES or x == "prevention"]
             out.append(Chunk(id=f"{sid}-{i:03d}", text=ch, title=m.get("title", sid),
                              source=m.get("citation", m.get("title", sid)), year=m.get("year"),

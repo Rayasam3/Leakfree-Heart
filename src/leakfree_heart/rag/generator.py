@@ -35,7 +35,9 @@ Rules:
 4. If evidence passages are provided: every claim and recommendation must cite at least one passage id from the list,
    and may only state things supported by the cited passage. Never invent ids. If no evidence is provided leave citations empty.
 5. Statements are plain language, at most 40 words. Recommendations are lifestyle or follow-up advice
-   (at most 3), and always suggest discussing results with a clinician."""
+   (at most 3), and always suggest discussing results with a clinician.
+6. If a cited passage describes an observation in a research dataset rather than a clinical rule (for example,
+   that patients without chest pain had a high disease rate there), say it is a dataset observation and not a general rule."""
 
 
 # ------------------------------------------------------------------- prompts

@@ -6,9 +6,10 @@ import Contributions from './components/Contributions.jsx'
 import Explanation from './components/Explanation.jsx'
 import Evidence from './components/Evidence.jsx'
 import ResultsTab from './components/ResultsTab.jsx'
+import EcgTab from './components/EcgTab.jsx'
 
 export default function App() {
-  const [tab, setTab] = useState('patient')
+  const [tab, setTab] = useState('ecg')
   const [meta, setMeta] = useState(null)
   const [health, setHealth] = useState(null)
   const [report, setReport] = useState(null)
@@ -31,15 +32,16 @@ export default function App() {
       <div className="banner" role="note">Research prototype built on small public datasets. Not a medical device and not for clinical decisions.</div>
       <div className="shell">
         <header className="top">
-          <h1 className="brand">LeakFree-Heart<small>Risk estimates with explanations that are checked, and a clear “not sure”</small></h1>
-          {health && <span className="note">Model: {health.model}. Writer: {health.llm_backend === 'template' ? 'fixed template (no language model connected)' : health.llm_backend}.</span>}
+          <h1 className="brand">LeakFree-Heart<small>Heart models that explain themselves and say “not sure” when they should</small></h1>
+          {health && tab === 'patient' && <span className="note">Model: {health.model}. Writer: {health.llm_backend === 'template' ? 'fixed template (no language model connected)' : health.llm_backend}.</span>}
         </header>
         <div className="tabs" role="tablist">
-          <button role="tab" aria-selected={tab === 'patient'} onClick={() => setTab('patient')}>Patient</button>
+          <button role="tab" aria-selected={tab === 'ecg'} onClick={() => setTab('ecg')}>ECG (12-lead)</button>
+          <button role="tab" aria-selected={tab === 'patient'} onClick={() => setTab('patient')}>Clinical data</button>
           <button role="tab" aria-selected={tab === 'results'} onClick={() => setTab('results')}>Study results</button>
         </div>
         {err && <div className="err" role="alert">{err}</div>}
-        {tab === 'results' ? <ResultsTab /> : (
+        {tab === 'results' ? <ResultsTab /> : tab === 'ecg' ? <EcgTab /> : (
           <div className="layout">
             {meta ? <IntakeForm meta={meta} onSubmit={run} busy={busy} /> : <p className="note">Connecting to the API…</p>}
             <main>

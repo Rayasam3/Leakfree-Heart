@@ -72,3 +72,18 @@ faithfulness:
   k_top: 5
   support_threshold: 0.12
   n_patients: 40
+
+ecg:
+  root: data/raw/ptbxl            # PTB-XL 1.0.3 (python -m leakfree_heart download-ptbxl)
+  results_dir: results_ecg        # trained ECG models, tables and figures (used by the web app)
+  min_likelihood: 50              # SCP diagnostic codes with likelihood >= 50 define the superclasses
+  device: auto
+  epochs: 30
+  patience: 6
+  batch_size: 128
+  lr: 0.002
+  width: 32
+  seeds: [0, 1, 2]
+  n_boot: 1000                    # patient-level bootstrap resamples
+  alphas: [0.05, 0.10, 0.15, 0.20]
+  save_models: true

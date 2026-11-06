@@ -13,7 +13,9 @@ BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 
 class Retriever:
     def __init__(self, chunks: list[Chunk], backend: str = "auto",
-                 model_name: str = "BAAI/bge-small-en-v1.5", device: str | None = None):
+                 model_name: str = "BAAI/bge-small-en-v1.5", device: str | None = None,
+                 seed_boost: float = 1.6):
+        self.seed_boost = seed_boost
         self.chunks = chunks
         self.by_id = {c.id: c for c in chunks}
         self._docs = [f"{c.title}. {c.text}" for c in chunks]
@@ -71,7 +73,8 @@ class Retriever:
             for rank, i in enumerate(order[: max(k * 4, 20)]):
                 if np.isfinite(s[i]):
                     fused[i] += 1.0 / (60 + rank + 1)
-        fused = np.where(mask, fused, -np.inf)
+        boost = np.array([self.seed_boost if c.id.startswith("KB-") else 1.0 for c in self.chunks])
+        fused = np.where(mask, fused * boost, -np.inf)
         top = np.argsort(-fused)[:k]
         return [(self.chunks[i], float(fused[i])) for i in top if np.isfinite(fused[i]) and fused[i] > 0]
 
