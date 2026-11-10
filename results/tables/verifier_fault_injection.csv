@@ -1,0 +1,8 @@
+fault,n,detection_rate,detected_by_expected_check,collateral_flags
+direction_flip,40,1.0,1.0,0.025
+fabricated_citation,40,1.0,1.0,0.0
+off_topk_feature,40,1.0,1.0,0.025
+unsafe_statement,40,1.0,1.0,0.025
+unsupported_citation,40,1.0,1.0,0.0
+unsupported_statement,40,1.0,1.0,0.025
+wrong_number,40,0.975,0.975,0.025

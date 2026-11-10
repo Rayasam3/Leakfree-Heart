@@ -1,0 +1,25 @@
+condition,alpha,answered,answered_ci,accuracy_answered,acc_answered_ci,accuracy_deferred_if_forced,coverage_abnormal,coverage_normal
+tab_logreg,0.05,0.3317,"(np.float64(0.306), np.float64(0.357))",0.8426,"(np.float64(0.816), np.float64(0.87))",0.5745,0.9535,0.9406
+tab_logreg,0.1,0.4473,"(np.float64(0.42), np.float64(0.473))",0.807,"(np.float64(0.779), np.float64(0.83))",0.5472,0.9159,0.9109
+tab_logreg,0.15,0.5946,"(np.float64(0.569), np.float64(0.618))",0.7654,"(np.float64(0.741), np.float64(0.79))",0.5138,0.8633,0.857
+tab_logreg,0.2,0.7298,"(np.float64(0.707), np.float64(0.753))",0.7346,"(np.float64(0.713), np.float64(0.758))",0.4711,0.8168,0.7932
+feat_xgb,0.05,0.6356,"(np.float64(0.615), np.float64(0.656))",0.891,"(np.float64(0.874), np.float64(0.908))",0.6131,0.922,0.9417
+feat_xgb,0.1,0.8156,"(np.float64(0.799), np.float64(0.831))",0.8403,"(np.float64(0.823), np.float64(0.858))",0.5661,0.8764,0.8614
+feat_xgb,0.15,0.9473,"(np.float64(0.937), np.float64(0.955))",0.8059,"(np.float64(0.788), np.float64(0.824))",0.5,0.8265,0.8031
+feat_xgb,0.2,0.9766,"(np.float64(0.97), np.float64(0.982))",0.7977,"(np.float64(0.78), np.float64(0.815))",0.4583,0.8028,0.802
+feat_xgb_tab,0.05,0.6702,"(np.float64(0.649), np.float64(0.692))",0.8916,"(np.float64(0.875), np.float64(0.907))",0.6065,0.9316,0.9219
+feat_xgb_tab,0.1,0.8239,"(np.float64(0.807), np.float64(0.841))",0.852,"(np.float64(0.835), np.float64(0.87))",0.5429,0.8764,0.8801
+feat_xgb_tab,0.15,0.9449,"(np.float64(0.934), np.float64(0.955))",0.8131,"(np.float64(0.797), np.float64(0.832))",0.531,0.8317,0.813
+feat_xgb_tab,0.2,0.9566,"(np.float64(0.947), np.float64(0.966))",0.8098,"(np.float64(0.792), np.float64(0.828))",0.5281,0.8282,0.8053
+ecg_cnn,0.05,0.7951,"(np.float64(0.776), np.float64(0.812))",0.9423,"(np.float64(0.93), np.float64(0.954))",0.6262,0.9483,0.9615
+ecg_cnn,0.1,0.9859,"(np.float64(0.981), np.float64(0.991))",0.8837,"(np.float64(0.871), np.float64(0.897))",0.4483,0.8791,0.8933
+ecg_cnn,0.15,0.9366,"(np.float64(0.925), np.float64(0.946))",0.9016,"(np.float64(0.888), np.float64(0.915))",0.5077,0.8992,0.9186
+ecg_cnn,0.2,0.8366,"(np.float64(0.819), np.float64(0.852))",0.9347,"(np.float64(0.922), np.float64(0.946))",0.5851,0.929,0.9659
+fusion_e2e,0.05,0.8039,"(np.float64(0.785), np.float64(0.82))",0.9399,"(np.float64(0.928), np.float64(0.951))",0.6269,0.9404,0.9659
+fusion_e2e,0.1,0.9927,"(np.float64(0.989), np.float64(0.996))",0.8875,"(np.float64(0.874), np.float64(0.901))",0.6667,0.8808,0.8977
+fusion_e2e,0.15,0.938,"(np.float64(0.928), np.float64(0.949))",0.9085,"(np.float64(0.896), np.float64(0.921))",0.5197,0.9045,0.9263
+fusion_e2e,0.2,0.8585,"(np.float64(0.842), np.float64(0.873))",0.9278,"(np.float64(0.915), np.float64(0.939))",0.5793,0.9202,0.9604
+fusion_stack,0.05,0.7824,"(np.float64(0.762), np.float64(0.799))",0.9476,"(np.float64(0.936), np.float64(0.96))",0.6435,0.9474,0.9736
+fusion_stack,0.1,0.9795,"(np.float64(0.973), np.float64(0.985))",0.8875,"(np.float64(0.874), np.float64(0.902))",0.5952,0.8869,0.8933
+fusion_stack,0.15,0.9483,"(np.float64(0.938), np.float64(0.958))",0.8981,"(np.float64(0.885), np.float64(0.913))",0.5755,0.8957,0.9131
+fusion_stack,0.2,0.8361,"(np.float64(0.818), np.float64(0.852))",0.9364,"(np.float64(0.924), np.float64(0.948))",0.6012,0.9343,0.9626

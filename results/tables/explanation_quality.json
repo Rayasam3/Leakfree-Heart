@@ -1,0 +1,26 @@
+{
+  "model": "logreg",
+  "n_patients": 60,
+  "shap_vs_lime": {
+    "spearman_abs": 0.8445970695970697,
+    "top5_jaccard": 0.7158730158730158,
+    "top5_sign_agreement": 1.0
+  },
+  "shap_stability": {
+    "top5_jaccard_vs_run0": 0.769047619047619,
+    "spearman_vs_run0": 0.9368818681318679
+  },
+  "fidelity": {
+    "SHAP": {
+      "comprehensiveness": 0.21805845948717473,
+      "sufficiency": 0.0662693774696977,
+      "comprehensiveness_random": 0.04324708343173312
+    },
+    "LIME": {
+      "comprehensiveness": 0.13850542620789802,
+      "sufficiency": 0.12861696010193585,
+      "comprehensiveness_random": 0.04324708343173312
+    }
+  },
+  "base_value": 0.45867069089914153
+}

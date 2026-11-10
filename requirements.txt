@@ -1,0 +1,25 @@
+# LeakFree-Heart - core dependencies (Python 3.10 or 3.11 recommended)
+# PyTorch is installed separately because the build depends on your GPU (see README.md).
+numpy>=1.26,<2.3
+pandas>=2.1,<2.4
+scipy>=1.10
+scikit-learn>=1.4,<1.9
+xgboost>=2.0
+statsmodels>=0.14
+matplotlib>=3.7
+shap>=0.44
+lime>=0.2.0.1
+pyyaml>=6
+tqdm
+joblib
+requests
+beautifulsoup4
+pypdf>=4
+sentence-transformers>=2.7
+faiss-cpu>=1.7.4
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2
+httpx
+pytest
+wfdb>=4.1

@@ -1,0 +1,3 @@
+protocol,test_patient_overlap,test_auc,test_accuracy
+Official patient-wise folds,0.0,0.9471,0.8659
+Random record-wise split,0.1624,0.9565,0.882

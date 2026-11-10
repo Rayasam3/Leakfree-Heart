@@ -1,0 +1,14 @@
+item,value
+ECGs (with a diagnostic label),20373.0
+Patients,17845.0
+ECGs per patient (max),10.0
+Patients with >1 ECG,1859.0
+Normal ECGs,9038.0
+Abnormal ECGs,11335.0
+Abnormal prevalence,0.5564
+Female fraction,0.4834
+Age median (years),62.0
+ECGs with superclass MI,4134.0
+ECGs with superclass STTC,5078.0
+ECGs with superclass CD,4891.0
+ECGs with superclass HYP,2258.0

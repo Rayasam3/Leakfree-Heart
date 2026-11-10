@@ -1,0 +1,79 @@
+{
+  "duplicate_stats": {
+    "n_rows": 1025,
+    "n_unique": 302,
+    "n_duplicate_rows": 723,
+    "duplicate_fraction": 0.7053658536585365,
+    "n_groups_with_copies": 302,
+    "max_copies": 8
+  },
+  "coding_audit": {
+    "label_direction_detected": "target is INVERTED: target=1 means NO disease",
+    "cp_recode_kaggle_to_uci0": {
+      "0": 3,
+      "1": 1,
+      "2": 2,
+      "3": 0
+    },
+    "thal_recode_kaggle_to_canonical": {
+      "2": 1,
+      "1": 2,
+      "3": 3
+    },
+    "slope_recode": "canonical = 2 - kaggle",
+    "ca_null": "kaggle ca==4 is a null",
+    "thal_null": "kaggle thal==0 is a null",
+    "note": "Category order differs from UCI, so notebooks that label Kaggle cp/thal/slope with the UCI descriptions (and target=1 as disease) attach wrong clinical meanings."
+  },
+  "overlap_P1": {
+    "n_test": 205,
+    "n_test_with_exact_copy_in_train": 199,
+    "fraction": 0.9707317073170731
+  },
+  "paper_protocol_breakdown": {
+    "logreg": {
+      "overall": 0.7951219512195122,
+      "on_rows_with_copy_in_train": 0.7889447236180904,
+      "on_unseen_rows": 1.0,
+      "n_unseen": 6
+    },
+    "rf": {
+      "overall": 0.9707317073170731,
+      "on_rows_with_copy_in_train": 0.9849246231155779,
+      "on_unseen_rows": 0.5,
+      "n_unseen": 6
+    },
+    "xgb": {
+      "overall": 0.9170731707317074,
+      "on_rows_with_copy_in_train": 0.9296482412060302,
+      "on_unseen_rows": 0.5,
+      "n_unseen": 6
+    },
+    "dense_paper": {
+      "overall": 0.975609756097561,
+      "on_rows_with_copy_in_train": 0.9899497487437185,
+      "on_unseen_rows": 0.5,
+      "n_unseen": 6
+    }
+  },
+  "repeated_splits": {
+    "logreg": {
+      "duplicated_mean": 0.8458536585365855,
+      "duplicated_sd": 0.021837101742048188,
+      "dedup_mean": 0.8278688524590164,
+      "dedup_sd": 0.056432506485437725
+    },
+    "rf": {
+      "duplicated_mean": 0.9897560975609757,
+      "duplicated_sd": 0.01100537968066194,
+      "dedup_mean": 0.8147540983606557,
+      "dedup_sd": 0.0609209972985641
+    },
+    "xgb": {
+      "duplicated_mean": 0.953170731707317,
+      "duplicated_sd": 0.010731707317073146,
+      "dedup_mean": 0.8016393442622951,
+      "dedup_sd": 0.056527670982185786
+    }
+  }
+}

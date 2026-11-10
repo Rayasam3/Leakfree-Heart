@@ -1,0 +1,3 @@
+protocol,n_test,n_test_patient_in_train,fraction
+Official patient-wise folds,2050,0,0.0
+Random record-wise split (same sizes),2050,333,0.1624390243902439

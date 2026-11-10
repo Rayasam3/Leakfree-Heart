@@ -1,0 +1,4 @@
+{
+  "skipped": true,
+  "reason": "External validation needs the other UCI sites. Run `python scripts/download_data.py` and set data.source: auto/uci."
+}

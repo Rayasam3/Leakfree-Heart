@@ -1,0 +1,1710 @@
+{
+  "template": [
+    {
+      "patient": {
+        "age": 67.0,
+        "sex": 0.0,
+        "cp": 3.0,
+        "trestbps": 106.0,
+        "chol": 223.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 142.0,
+        "exang": 0.0,
+        "oldpeak": 0.3,
+        "slope": 0.0,
+        "ca": 2.0,
+        "thal": 1.0
+      },
+      "prob": 0.45447279463338913,
+      "top": [
+        [
+          "ca",
+          0.30423449961191246
+        ],
+        [
+          "sex",
+          -0.1551400602524037
+        ],
+        [
+          "cp",
+          0.11146517457650387
+        ],
+        [
+          "thal",
+          -0.10458714366675528
+        ],
+        [
+          "slope",
+          -0.0669050975613836
+        ]
+      ],
+      "explanation": {
+        "summary": "The model estimates a lower probability of heart disease (45%).",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "2 major vessel(s) coloured by fluoroscopy raises the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "cp",
+            "direction": "increases",
+            "statement": "Asymptomatic chest pain raises the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "Thallium stress test: normal lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "slope",
+            "direction": "decreases",
+            "statement": "Upsloping peak-exercise ST slope lowers the model's estimated risk.",
+            "citations": []
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss this result with a clinician; it is a research estimate, not a diagnosis.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 0.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.0,
+        "readability_fre": 35.23970588235295
+      }
+    },
+    {
+      "patient": {
+        "age": 41.0,
+        "sex": 1.0,
+        "cp": 1.0,
+        "trestbps": 135.0,
+        "chol": 203.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 132.0,
+        "exang": 0.0,
+        "oldpeak": 0.0,
+        "slope": 1.0,
+        "ca": 0.0,
+        "thal": 2.0
+      },
+      "prob": 0.3295105502414049,
+      "top": [
+        [
+          "ca",
+          -0.08535994936776245
+        ],
+        [
+          "slope",
+          0.060249062569060464
+        ],
+        [
+          "thalach",
+          0.044227105261707526
+        ],
+        [
+          "restecg",
+          -0.04042589869667468
+        ],
+        [
+          "cp",
+          -0.038811777040258524
+        ]
+      ],
+      "explanation": {
+        "summary": "The model estimates a lower probability of heart disease (33%).",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "0 major vessel(s) coloured by fluoroscopy lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "slope",
+            "direction": "increases",
+            "statement": "Flat peak-exercise ST slope raises the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "Maximum exercise heart rate of 132 bpm raises the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "restecg",
+            "direction": "decreases",
+            "statement": "Resting ECG: normal lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Atypical angina chest pain lowers the model's estimated risk.",
+            "citations": []
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss this result with a clinician; it is a research estimate, not a diagnosis.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 0.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.0,
+        "readability_fre": 36.59500000000003
+      }
+    },
+    {
+      "patient": {
+        "age": 66.0,
+        "sex": 0.0,
+        "cp": 0.0,
+        "trestbps": 150.0,
+        "chol": 226.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 114.0,
+        "exang": 0.0,
+        "oldpeak": 2.6,
+        "slope": 2.0,
+        "ca": 0.0,
+        "thal": 1.0
+      },
+      "prob": 0.07647304474299181,
+      "top": [
+        [
+          "sex",
+          -0.14990929864608218
+        ],
+        [
+          "thal",
+          -0.09447103644539792
+        ],
+        [
+          "cp",
+          -0.09423226911167049
+        ],
+        [
+          "ca",
+          -0.08149946571036427
+        ],
+        [
+          "thalach",
+          0.062374707627278515
+        ]
+      ],
+      "explanation": {
+        "summary": "The model estimates a lower probability of heart disease (8%).",
+        "claims": [
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "Thallium stress test: normal lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Typical angina chest pain lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "0 major vessel(s) coloured by fluoroscopy lowers the model's estimated risk.",
+            "citations": []
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "Maximum exercise heart rate of 114 bpm raises the model's estimated risk.",
+            "citations": []
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss this result with a clinician; it is a research estimate, not a diagnosis.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 0.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.0,
+        "readability_fre": 37.15357142857144
+      }
+    }
+  ],
+  "template_rag": [
+    {
+      "patient": {
+        "age": 67.0,
+        "sex": 0.0,
+        "cp": 3.0,
+        "trestbps": 106.0,
+        "chol": 223.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 142.0,
+        "exang": 0.0,
+        "oldpeak": 0.3,
+        "slope": 0.0,
+        "ca": 2.0,
+        "thal": 1.0
+      },
+      "prob": 0.45447279463338913,
+      "top": [
+        [
+          "ca",
+          0.30423449961191246
+        ],
+        [
+          "sex",
+          -0.1551400602524037
+        ],
+        [
+          "cp",
+          0.11146517457650387
+        ],
+        [
+          "thal",
+          -0.10458714366675528
+        ],
+        [
+          "slope",
+          -0.0669050975613836
+        ]
+      ],
+      "explanation": {
+        "summary": "The model estimates a lower probability of heart disease (45%).",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "2 major vessel(s) coloured by fluoroscopy raises the model's estimated risk. The ca variable counts the major coronary vessels (0 to 3) coloured by fluoroscopy, and a higher count indicates more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex lowers the model's estimated risk. Sex is a variable in the pooled cohort equations.",
+            "citations": [
+              "KB-002"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "increases",
+            "statement": "Asymptomatic chest pain raises the model's estimated risk. In the Cleveland cohort, patients categorised as asymptomatic for chest pain had the highest observed prevalence of angiographic disease (about 73 percent of such patients).",
+            "citations": [
+              "KB-004"
+            ]
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "Thallium stress test: normal lowers the model's estimated risk. Thallium myocardial perfusion imaging is reported in the dataset as normal, fixed defect or reversible defect.",
+            "citations": [
+              "KB-019"
+            ]
+          },
+          {
+            "feature": "slope",
+            "direction": "decreases",
+            "statement": "Upsloping peak-exercise ST slope lowers the model's estimated risk. The slope of the ST segment at peak exercise is described as upsloping, flat or downsloping.",
+            "citations": [
+              "KB-017"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Adults should get at least 150 minutes per week of moderate-intensity or 75 minutes per week of vigorous-intensity aerobic physical activity to reduce ASCVD risk, and any increase from inactivity is beneficial.",
+            "citations": [
+              "KB-020"
+            ]
+          },
+          {
+            "text": "All adults should be asked about tobacco use, and people who smoke should be advised and assisted to quit, because stopping smoking is among the most effective measures for preventing cardiovascular disease.",
+            "citations": [
+              "KB-022"
+            ]
+          },
+          {
+            "text": "Discuss this result with a clinician; it is a research estimate, not a diagnosis.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 32.978500000000025
+      }
+    },
+    {
+      "patient": {
+        "age": 41.0,
+        "sex": 1.0,
+        "cp": 1.0,
+        "trestbps": 135.0,
+        "chol": 203.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 132.0,
+        "exang": 0.0,
+        "oldpeak": 0.0,
+        "slope": 1.0,
+        "ca": 0.0,
+        "thal": 2.0
+      },
+      "prob": 0.3295105502414049,
+      "top": [
+        [
+          "ca",
+          -0.08535994936776245
+        ],
+        [
+          "slope",
+          0.060249062569060464
+        ],
+        [
+          "thalach",
+          0.044227105261707526
+        ],
+        [
+          "restecg",
+          -0.04042589869667468
+        ],
+        [
+          "cp",
+          -0.038811777040258524
+        ]
+      ],
+      "explanation": {
+        "summary": "The model estimates a lower probability of heart disease (33%).",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "0 major vessel(s) coloured by fluoroscopy lowers the model's estimated risk. The ca variable counts the major coronary vessels (0 to 3) coloured by fluoroscopy, and a higher count indicates more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "slope",
+            "direction": "increases",
+            "statement": "Flat peak-exercise ST slope raises the model's estimated risk. The slope of the ST segment at peak exercise is described as upsloping, flat or downsloping.",
+            "citations": [
+              "KB-017"
+            ]
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "Maximum exercise heart rate of 132 bpm raises the model's estimated risk. Maximum heart rate during exercise testing is judged against the age-predicted maximum, roughly 220 minus age.",
+            "citations": [
+              "KB-014"
+            ]
+          },
+          {
+            "feature": "restecg",
+            "direction": "decreases",
+            "statement": "Resting ECG: normal lowers the model's estimated risk. Left ventricular hypertrophy on the electrocardiogram is often a consequence of long-standing hypertension and is associated with higher cardiovascular risk.",
+            "citations": [
+              "KB-013"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Atypical angina chest pain lowers the model's estimated risk. Typical (classic) angina is substernal chest discomfort of characteristic quality and duration that is provoked by exertion or emotional stress and relieved by rest or nitroglycerin.",
+            "citations": [
+              "KB-003"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Adults should get at least 150 minutes per week of moderate-intensity or 75 minutes per week of vigorous-intensity aerobic physical activity to reduce ASCVD risk, and any increase from inactivity is beneficial.",
+            "citations": [
+              "KB-020"
+            ]
+          },
+          {
+            "text": "For adults with overweight or obesity, weight loss achieved through counselling and lifestyle change improves cardiovascular risk factors such as blood pressure, lipids and glucose.",
+            "citations": [
+              "KB-023"
+            ]
+          },
+          {
+            "text": "Discuss this result with a clinician; it is a research estimate, not a diagnosis.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 26.977542372881402
+      }
+    },
+    {
+      "patient": {
+        "age": 66.0,
+        "sex": 0.0,
+        "cp": 0.0,
+        "trestbps": 150.0,
+        "chol": 226.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 114.0,
+        "exang": 0.0,
+        "oldpeak": 2.6,
+        "slope": 2.0,
+        "ca": 0.0,
+        "thal": 1.0
+      },
+      "prob": 0.07647304474299181,
+      "top": [
+        [
+          "sex",
+          -0.14990929864608218
+        ],
+        [
+          "thal",
+          -0.09447103644539792
+        ],
+        [
+          "cp",
+          -0.09423226911167049
+        ],
+        [
+          "ca",
+          -0.08149946571036427
+        ],
+        [
+          "thalach",
+          0.062374707627278515
+        ]
+      ],
+      "explanation": {
+        "summary": "The model estimates a lower probability of heart disease (8%).",
+        "claims": [
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex lowers the model's estimated risk. Sex is a variable in the pooled cohort equations.",
+            "citations": [
+              "KB-002"
+            ]
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "Thallium stress test: normal lowers the model's estimated risk. Thallium myocardial perfusion imaging is reported in the dataset as normal, fixed defect or reversible defect.",
+            "citations": [
+              "KB-019"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Typical angina chest pain lowers the model's estimated risk. Typical (classic) angina is substernal chest discomfort of characteristic quality and duration that is provoked by exertion or emotional stress and relieved by rest or nitroglycerin.",
+            "citations": [
+              "KB-003"
+            ]
+          },
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "0 major vessel(s) coloured by fluoroscopy lowers the model's estimated risk. The ca variable counts the major coronary vessels (0 to 3) coloured by fluoroscopy, and a higher count indicates more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "Maximum exercise heart rate of 114 bpm raises the model's estimated risk. Maximum heart rate during exercise testing is judged against the age-predicted maximum, roughly 220 minus age.",
+            "citations": [
+              "KB-014"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Adults should get at least 150 minutes per week of moderate-intensity or 75 minutes per week of vigorous-intensity aerobic physical activity to reduce ASCVD risk, and any increase from inactivity is beneficial.",
+            "citations": [
+              "KB-020"
+            ]
+          },
+          {
+            "text": "For adults with overweight or obesity, weight loss achieved through counselling and lifestyle change improves cardiovascular risk factors such as blood pressure, lipids and glucose.",
+            "citations": [
+              "KB-023"
+            ]
+          },
+          {
+            "text": "Discuss this result with a clinician; it is a research estimate, not a diagnosis.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 28.780540540540557
+      }
+    }
+  ],
+  "llm_norag": [
+    {
+      "patient": {
+        "age": 67.0,
+        "sex": 0.0,
+        "cp": 3.0,
+        "trestbps": 106.0,
+        "chol": 223.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 142.0,
+        "exang": 0.0,
+        "oldpeak": 0.3,
+        "slope": 0.0,
+        "ca": 2.0,
+        "thal": 1.0
+      },
+      "prob": 0.45447279463338913,
+      "top": [
+        [
+          "ca",
+          0.30423449961191246
+        ],
+        [
+          "sex",
+          -0.1551400602524037
+        ],
+        [
+          "cp",
+          0.11146517457650387
+        ],
+        [
+          "thal",
+          -0.10458714366675528
+        ],
+        [
+          "slope",
+          -0.0669050975613836
+        ]
+      ],
+      "explanation": {
+        "summary": "This heart disease risk model estimates a 45% probability of heart disease for the patient.",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "The patient has 2 major vessel(s) coloured by fluoroscopy, which increases the risk of heart disease by 30.4 percentage points.",
+            "citations": []
+          },
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "The patient is female, which decreases the risk of heart disease by 15.5 percentage points.",
+            "citations": []
+          },
+          {
+            "feature": "cp",
+            "direction": "increases",
+            "statement": "The patient has asymptomatic chest pain, which increases the risk of heart disease by 11.1 percentage points.",
+            "citations": []
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "The patient had a normal thallium stress test, which decreases the risk of heart disease by 10.5 percentage points.",
+            "citations": []
+          },
+          {
+            "feature": "slope",
+            "direction": "decreases",
+            "statement": "The patient has an upsloping peak-exercise ST slope, which decreases the risk of heart disease by 6.7 percentage points.",
+            "citations": []
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": []
+          },
+          {
+            "text": "Schedule a follow-up appointment to reassess the patient's risk factors.",
+            "citations": []
+          },
+          {
+            "text": "Consider referring the patient to a cardiologist for further evaluation and management.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 0.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.0,
+        "readability_fre": 57.63382352941181
+      }
+    },
+    {
+      "patient": {
+        "age": 41.0,
+        "sex": 1.0,
+        "cp": 1.0,
+        "trestbps": 135.0,
+        "chol": 203.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 132.0,
+        "exang": 0.0,
+        "oldpeak": 0.0,
+        "slope": 1.0,
+        "ca": 0.0,
+        "thal": 2.0
+      },
+      "prob": 0.3295105502414049,
+      "top": [
+        [
+          "ca",
+          -0.08535994936776245
+        ],
+        [
+          "slope",
+          0.060249062569060464
+        ],
+        [
+          "thalach",
+          0.044227105261707526
+        ],
+        [
+          "restecg",
+          -0.04042589869667468
+        ],
+        [
+          "cp",
+          -0.038811777040258524
+        ]
+      ],
+      "explanation": {
+        "summary": "Estimated probability of heart disease is 33%. The model identifies several key drivers of risk, including a history of major vessel disease, a flat peak-exercise ST slope, and a maximum exercise heart rate of 132 bpm, which all increase the risk, and atypical angina chest pain and a normal resting ECG, which decrease the risk.",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "A history of 0 major vessel(s) coloured by fluoroscopy increases the risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "slope",
+            "direction": "increases",
+            "statement": "A flat peak-exercise ST slope increases the risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "A maximum exercise heart rate of 132 bpm increases the risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "restecg",
+            "direction": "decreases",
+            "statement": "A normal resting ECG decreases the risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Atypical angina chest pain decreases the risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "age",
+            "direction": "decreases",
+            "statement": "There is no evidence to support the claim that age decreases the risk of heart disease.",
+            "citations": []
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": []
+          },
+          {
+            "text": "Consider further testing or evaluation to assess the risk of heart disease.",
+            "citations": []
+          },
+          {
+            "text": "Encourage a healthy lifestyle, including regular exercise and a balanced diet.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 0.6666666666666666,
+        "evidence_grounded_rate": 0.0,
+        "fully_verified_rate": 0.6666666666666666,
+        "recall_at_k": 1.0,
+        "precision_topk": 0.8333333333333334,
+        "direction_accuracy": 0.8333333333333334,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 0.8,
+        "rec_grounded_rate": 0.0,
+        "readability_fre": 51.36712486308872
+      }
+    },
+    {
+      "patient": {
+        "age": 66.0,
+        "sex": 0.0,
+        "cp": 0.0,
+        "trestbps": 150.0,
+        "chol": 226.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 114.0,
+        "exang": 0.0,
+        "oldpeak": 2.6,
+        "slope": 2.0,
+        "ca": 0.0,
+        "thal": 1.0
+      },
+      "prob": 0.07647304474299181,
+      "top": [
+        [
+          "sex",
+          -0.14990929864608218
+        ],
+        [
+          "thal",
+          -0.09447103644539792
+        ],
+        [
+          "cp",
+          -0.09423226911167049
+        ],
+        [
+          "ca",
+          -0.08149946571036427
+        ],
+        [
+          "thalach",
+          0.062374707627278515
+        ]
+      ],
+      "explanation": {
+        "summary": "The estimated probability of heart disease is 8%. The model identifies several drivers of this risk, which should be discussed with a clinician.",
+        "claims": [
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex is associated with a lower risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "A normal thallium stress test result is associated with a lower risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Typical angina chest pain is associated with a lower risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "The absence of major vessel coloured by fluoroscopy is associated with a lower risk of heart disease.",
+            "citations": []
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "A maximum exercise heart rate of 114 bpm is associated with a higher risk of heart disease.",
+            "citations": []
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": []
+          },
+          {
+            "text": "Consider further testing or evaluation if the patient has a family history of heart disease or other risk factors.",
+            "citations": []
+          },
+          {
+            "text": "Monitor the patient's risk factors and adjust recommendations as needed.",
+            "citations": []
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 0.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.0,
+        "readability_fre": 48.71335294117651
+      }
+    }
+  ],
+  "llm_rag": [
+    {
+      "patient": {
+        "age": 67.0,
+        "sex": 0.0,
+        "cp": 3.0,
+        "trestbps": 106.0,
+        "chol": 223.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 142.0,
+        "exang": 0.0,
+        "oldpeak": 0.3,
+        "slope": 0.0,
+        "ca": 2.0,
+        "thal": 1.0
+      },
+      "prob": 0.45447279463338913,
+      "top": [
+        [
+          "ca",
+          0.30423449961191246
+        ],
+        [
+          "sex",
+          -0.1551400602524037
+        ],
+        [
+          "cp",
+          0.11146517457650387
+        ],
+        [
+          "thal",
+          -0.10458714366675528
+        ],
+        [
+          "slope",
+          -0.0669050975613836
+        ]
+      ],
+      "explanation": {
+        "summary": "Estimated probability of heart disease is 45% for this patient. The model predicts an increased risk due to several factors, including coronary artery disease, female sex, and asymptomatic chest pain. However, it is essential to note that the model relies on the coronary artery disease variable, which is not available in routine primary-care screening, and that having no symptoms does not necessarily increase the risk of heart disease.",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "The patient has 2 major vessel(s) coloured by fluoroscopy, indicating more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "sex",
+            "direction": "increases",
+            "statement": "Female sex is associated with a higher estimated ASCVD risk than premenopausal women.",
+            "citations": [
+              "KB-002"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "increases",
+            "statement": "Asymptomatic chest pain is associated with a higher prevalence of angiographic disease.",
+            "citations": [
+              "KB-004"
+            ]
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "A normal thallium stress test result indicates stress-induced ischaemia in viable myocardium.",
+            "citations": [
+              "KB-019"
+            ]
+          },
+          {
+            "feature": "slope",
+            "direction": "decreases",
+            "statement": "An upsloping ST segment response is less specific for ischaemia and may be normal.",
+            "citations": [
+              "KB-017"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": [
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Encourage regular physical activity, aiming for at least 150 minutes of moderate-intensity exercise per week.",
+            "citations": [
+              "KB-020"
+            ]
+          },
+          {
+            "text": "Ask about tobacco use and advise the patient to quit if they smoke.",
+            "citations": [
+              "KB-022"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 0.8,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 0.8,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 0.8,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 0.888888888888889,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 35.080238450074546
+      }
+    },
+    {
+      "patient": {
+        "age": 41.0,
+        "sex": 1.0,
+        "cp": 1.0,
+        "trestbps": 135.0,
+        "chol": 203.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 132.0,
+        "exang": 0.0,
+        "oldpeak": 0.0,
+        "slope": 1.0,
+        "ca": 0.0,
+        "thal": 2.0
+      },
+      "prob": 0.3295105502414049,
+      "top": [
+        [
+          "ca",
+          -0.08535994936776245
+        ],
+        [
+          "slope",
+          0.060249062569060464
+        ],
+        [
+          "thalach",
+          0.044227105261707526
+        ],
+        [
+          "restecg",
+          -0.04042589869667468
+        ],
+        [
+          "cp",
+          -0.038811777040258524
+        ]
+      ],
+      "explanation": {
+        "summary": "Estimated probability of heart disease is 33%.",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "Higher coronary artery disease count is associated with more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "slope",
+            "direction": "increases",
+            "statement": "A flat peak-exercise ST slope is less specific for ischaemia.",
+            "citations": [
+              "KB-017"
+            ]
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "A maximum exercise heart rate above 220 bpm is associated with worse cardiovascular outcomes.",
+            "citations": [
+              "KB-014"
+            ]
+          },
+          {
+            "feature": "restecg",
+            "direction": "decreases",
+            "statement": "A normal resting ECG is non-specific and needs clinical correlation.",
+            "citations": [
+              "KB-013"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Atypical angina chest pain is associated with a higher risk of heart disease.",
+            "citations": [
+              "KB-003"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Having no symptoms does not necessarily mean a lower risk of heart disease.",
+            "citations": [
+              "KB-004"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss results with a clinician to determine the best course of action.",
+            "citations": [
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Engage in at least 150 minutes of moderate-intensity aerobic physical activity per week to reduce ASCVD risk.",
+            "citations": [
+              "KB-020"
+            ]
+          },
+          {
+            "text": "Consider weight loss through counselling and lifestyle change if overweight or obese.",
+            "citations": [
+              "KB-023"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 41.59266279069769
+      }
+    },
+    {
+      "patient": {
+        "age": 66.0,
+        "sex": 0.0,
+        "cp": 0.0,
+        "trestbps": 150.0,
+        "chol": 226.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 114.0,
+        "exang": 0.0,
+        "oldpeak": 2.6,
+        "slope": 2.0,
+        "ca": 0.0,
+        "thal": 1.0
+      },
+      "prob": 0.07647304474299181,
+      "top": [
+        [
+          "sex",
+          -0.14990929864608218
+        ],
+        [
+          "thal",
+          -0.09447103644539792
+        ],
+        [
+          "cp",
+          -0.09423226911167049
+        ],
+        [
+          "ca",
+          -0.08149946571036427
+        ],
+        [
+          "thalach",
+          0.062374707627278515
+        ]
+      ],
+      "explanation": {
+        "summary": "A 40-year-old female patient has an estimated 8% probability of heart disease. Her risk factors include female sex, normal thallium stress test, typical angina chest pain, 0 major vessel(s) coloured by fluoroscopy, and a maximum exercise heart rate of 114 bpm. These factors contribute to her increased risk, with sex being the most significant contributor. The patient should discuss her results with a clinician and consider increasing her physical activity to at least 150 minutes per week of moderate-intensity aerobic exercise per week, and potentially losing weight if she is overweight or obese. Regular follow-up with a clinician is also recommended.",
+        "claims": [
+          {
+            "feature": "sex",
+            "direction": "increases",
+            "statement": "Female sex increases the risk of heart disease.",
+            "citations": [
+              "KB-002"
+            ]
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "Normal thallium stress test indicates no stress-induced ischaemia in viable myocardium.",
+            "citations": [
+              "KB-019"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "increases",
+            "statement": "Typical angina chest pain is a marker of obstructive coronary artery disease.",
+            "citations": [
+              "KB-003"
+            ]
+          },
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "Higher counts of major coronary vessels coloured by fluoroscopy indicate more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "Maximum exercise heart rate above 85% of age-predicted maximum may indicate reduced sensitivity of a stress test.",
+            "citations": [
+              "KB-014"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss results with a clinician and consider increasing physical activity to at least 150 minutes per week of moderate-intensity aerobic exercise per week.",
+            "citations": [
+              "KB-020",
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Consider weight loss if overweight or obese, and discuss with a clinician.",
+            "citations": [
+              "KB-023",
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Regular follow-up with a clinician is recommended.",
+            "citations": [
+              "KB-024"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 0.4,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 0.4,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 0.4,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 0.5714285714285715,
+        "rec_grounded_rate": 1.0,
+        "readability_fre": 32.778021978022
+      }
+    }
+  ],
+  "llm_rag_verified": [
+    {
+      "patient": {
+        "age": 67.0,
+        "sex": 0.0,
+        "cp": 3.0,
+        "trestbps": 106.0,
+        "chol": 223.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 142.0,
+        "exang": 0.0,
+        "oldpeak": 0.3,
+        "slope": 0.0,
+        "ca": 2.0,
+        "thal": 1.0
+      },
+      "prob": 0.45447279463338913,
+      "top": [
+        [
+          "ca",
+          0.30423449961191246
+        ],
+        [
+          "sex",
+          -0.1551400602524037
+        ],
+        [
+          "cp",
+          0.11146517457650387
+        ],
+        [
+          "thal",
+          -0.10458714366675528
+        ],
+        [
+          "slope",
+          -0.0669050975613836
+        ]
+      ],
+      "explanation": {
+        "summary": "Estimated probability of heart disease is 45% for this patient. The model identifies several key drivers of risk, including coronary artery disease, female sex, asymptomatic chest pain, and abnormal thallium stress test results. The patient should discuss these results with their clinician and consider lifestyle modifications such as regular exercise and smoking cessation.",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "increases",
+            "statement": "The patient has 2 major coronary vessels coloured by fluoroscopy, indicating more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex is associated with a lower estimated ASCVD risk compared to men of the same age.",
+            "citations": [
+              "KB-002",
+              "medlineplus_heart_diseases-000"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "increases",
+            "statement": "Asymptomatic chest pain is associated with a high prevalence of angiographic disease in the Cleveland cohort.",
+            "citations": [
+              "KB-004"
+            ]
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "A normal thallium stress test result indicates stress-induced ischaemia in viable myocardium, which is a stronger marker of active obstructive coronary disease.",
+            "citations": [
+              "KB-019"
+            ]
+          },
+          {
+            "feature": "slope",
+            "direction": "decreases",
+            "statement": "An upsloping ST segment response is less specific for ischaemia and is often normal.",
+            "citations": [
+              "KB-017"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": [
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Consider regular exercise to reduce ASCVD risk.",
+            "citations": [
+              "KB-020"
+            ]
+          },
+          {
+            "text": "Quit smoking to reduce ASCVD risk.",
+            "citations": [
+              "KB-022"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 32.430199684708384
+      }
+    },
+    {
+      "patient": {
+        "age": 41.0,
+        "sex": 1.0,
+        "cp": 1.0,
+        "trestbps": 135.0,
+        "chol": 203.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 132.0,
+        "exang": 0.0,
+        "oldpeak": 0.0,
+        "slope": 1.0,
+        "ca": 0.0,
+        "thal": 2.0
+      },
+      "prob": 0.3295105502414049,
+      "top": [
+        [
+          "ca",
+          -0.08535994936776245
+        ],
+        [
+          "slope",
+          0.060249062569060464
+        ],
+        [
+          "thalach",
+          0.044227105261707526
+        ],
+        [
+          "restecg",
+          -0.04042589869667468
+        ],
+        [
+          "cp",
+          -0.038811777040258524
+        ]
+      ],
+      "explanation": {
+        "summary": "The estimated probability of heart disease is 33%. This model predicts an increased risk for individuals with certain characteristics, including those with no major coronary vessels coloured by fluoroscopy (ca), a flat peak-exercise ST slope (slope), and a maximum exercise heart rate of 132 bpm (thalach). Conversely, individuals with a normal resting ECG (restecg) are associated with a decreased risk. The model is not a screening tool due to the limitations of the ca variable.",
+        "claims": [
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "The ca variable counts the major coronary vessels coloured by fluoroscopy, and a higher count indicates more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "slope",
+            "direction": "increases",
+            "statement": "A flat peak-exercise ST slope is less specific for ischaemia and is often normal.",
+            "citations": [
+              "KB-017"
+            ]
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "Maximum heart rate during exercise testing is judged against the age-predicted maximum, and a blunted heart-rate response to exercise is associated with worse cardiovascular outcomes.",
+            "citations": [
+              "KB-014"
+            ]
+          },
+          {
+            "feature": "restecg",
+            "direction": "decreases",
+            "statement": "A resting ECG abnormality is non-specific and needs clinical correlation.",
+            "citations": [
+              "KB-013"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Patients without chest pain, such as those categorised as asymptomatic for chest pain, had the highest observed prevalence of angiographic disease.",
+            "citations": [
+              "KB-004"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Silent ischaemia can occur without chest pain.",
+            "citations": [
+              "KB-004"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": [
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Consider increasing physical activity to reduce cardiovascular risk.",
+            "citations": [
+              "KB-020",
+              "KB-023"
+            ]
+          },
+          {
+            "text": "Schedule a follow-up appointment to monitor cardiovascular risk factors.",
+            "citations": [
+              "KB-024"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.6666666666666666,
+        "readability_fre": 34.478717948717986
+      }
+    },
+    {
+      "patient": {
+        "age": 66.0,
+        "sex": 0.0,
+        "cp": 0.0,
+        "trestbps": 150.0,
+        "chol": 226.0,
+        "fbs": 0.0,
+        "restecg": 0.0,
+        "thalach": 114.0,
+        "exang": 0.0,
+        "oldpeak": 2.6,
+        "slope": 2.0,
+        "ca": 0.0,
+        "thal": 1.0
+      },
+      "prob": 0.07647304474299181,
+      "top": [
+        [
+          "sex",
+          -0.14990929864608218
+        ],
+        [
+          "thal",
+          -0.09447103644539792
+        ],
+        [
+          "cp",
+          -0.09423226911167049
+        ],
+        [
+          "ca",
+          -0.08149946571036427
+        ],
+        [
+          "thalach",
+          0.062374707627278515
+        ]
+      ],
+      "explanation": {
+        "summary": "A 40-year-old female with no major vessel coloured by fluoroscopy has an estimated probability of heart disease of 8%.",
+        "claims": [
+          {
+            "feature": "sex",
+            "direction": "decreases",
+            "statement": "Female sex decreases the estimated ASCVD risk compared to men.",
+            "citations": [
+              "KB-002"
+            ]
+          },
+          {
+            "feature": "ca",
+            "direction": "decreases",
+            "statement": "A higher count of major coronary vessels coloured by fluoroscopy indicates more extensive coronary disease.",
+            "citations": [
+              "KB-018"
+            ]
+          },
+          {
+            "feature": "thal",
+            "direction": "decreases",
+            "statement": "A normal thallium stress test result indicates a lower risk of obstructive coronary artery disease.",
+            "citations": [
+              "KB-019"
+            ]
+          },
+          {
+            "feature": "cp",
+            "direction": "decreases",
+            "statement": "Typical angina is a less severe form of chest pain, carrying a lower pretest probability of obstructive coronary artery disease.",
+            "citations": [
+              "KB-003"
+            ]
+          },
+          {
+            "feature": "thalach",
+            "direction": "increases",
+            "statement": "A maximum exercise heart rate of 114 bpm increases the estimated ASCVD risk.",
+            "citations": [
+              "KB-014"
+            ]
+          }
+        ],
+        "recommendations": [
+          {
+            "text": "Discuss the results with a clinician to determine the best course of action.",
+            "citations": [
+              "KB-024",
+              "KB-020",
+              "KB-023",
+              "KB-024"
+            ]
+          },
+          {
+            "text": "Consider increasing physical activity to reduce ASCVD risk.",
+            "citations": [
+              "KB-020",
+              "KB-024"
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "valid_json": 1.0,
+        "claim_faithful_rate": 1.0,
+        "evidence_grounded_rate": 1.0,
+        "fully_verified_rate": 1.0,
+        "recall_at_k": 1.0,
+        "precision_topk": 1.0,
+        "direction_accuracy": 1.0,
+        "unverifiable_number_rate": 0.0,
+        "fabricated_citation_rate": 0.0,
+        "safety_violation_rate": 0.0,
+        "efs": 1.0,
+        "rec_grounded_rate": 0.5,
+        "readability_fre": 34.40986280487806
+      }
+    }
+  ]
+}
